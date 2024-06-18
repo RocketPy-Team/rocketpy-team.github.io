@@ -26,15 +26,16 @@ body {
 }
 .v37_87 {
   width: 443px;
-  color: linear-gradient(rgba(180,181,205,1), rgba(205,205,205,1));
   position: absolute;
   top: 1218px;
   left: 761px;
-  font-family: Ruda;
-  font-weight: Black;
-  font-size: 50px;
-  opacity: 1;
-  text-align: left;
+  background: linear-gradient(rgba(180, 181, 205, 1), rgba(205, 205, 205, 1));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 .v33_9 {
   width: 100px;
@@ -49,17 +50,19 @@ body {
   left: 1758px;
   overflow: hidden;
 }
-.v33_17 {
-  width: 650px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 612px;
-  left: 988px;
+.body-font {
+  color: rgba(255, 255, 255, 1);
   font-family: Ruda;
   font-weight: bold;
   font-size: 31px;
   opacity: 1;
   text-align: center;
+}
+.v33_17 {
+  width: 650px;
+  position: absolute;
+  top: 612px;
+  left: 988px;
 }
 .v35_22 {
   width: 100%;
@@ -74,16 +77,12 @@ body {
   left: 1308px;
   overflow: hidden;
 }
+
 .v35_50 {
   width: 627px;
   position: absolute;
   top: 334px;
   left: 653px;
-  font-family: Ruda;
-  font-weight: Black;
-  font-size: 51px;
-  opacity: 1;
-  text-align: left;
 
   background: linear-gradient(rgba(228, 228, 228, 1), rgba(255, 195, 121, 1));
     -webkit-background-clip: text;
@@ -92,8 +91,16 @@ body {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     text-fill-color: transparent;
-
 }
+
+.body-title {
+  font-family: Ruda;
+  font-weight:bolder;
+  font-size: 51px;
+  opacity: 1;
+  text-align: left;
+}
+
 .v35_80 {
   width: 196px;
   height: 110px;
@@ -175,7 +182,7 @@ body {
 .v40_140 {
   width: 439px;
   height: 439px;
-  background: url("../images/v40_140.png");
+  background: url("../images/Group\ 2.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -315,27 +322,29 @@ body {
 }
 .v50_2 {
   width: 464px;
-  color: linear-gradient(rgba(180,181,205,1), rgba(205,205,205,1));
   position: absolute;
   top: 2225px;
   left: 719px;
-  font-family: Ruda;
-  font-weight: Black;
-  font-size: 50px;
-  opacity: 1;
-  text-align: left;
+  background: linear-gradient(rgba(180, 181, 205, 1), rgba(205, 205, 205, 1));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 .v73_47 {
   width: 864px;
-  color: linear-gradient(rgba(180,181,205,1), rgba(180,181,205,0.7699999809265137));
   position: absolute;
   top: 3137px;
   left: 547px;
-  font-family: Ruda;
-  font-weight: Black;
-  font-size: 50px;
-  opacity: 1;
-  text-align: left;
+  background: linear-gradient(rgba(180, 181, 205, 1), rgba(180, 181, 205, 0.7699999809265137));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 .v102_62 {
   width: 100%;
@@ -343,11 +352,13 @@ body {
   position: absolute;
   top: 4170px;
   left: 513px;
-  font-family: Ruda;
-  font-weight: Black;
-  font-size: 50px;
-  opacity: 1;
-  text-align: left;
+  background: linear-gradient(rgba(180, 181, 205, 1), rgba(180, 181, 205, 0.7699999809265137));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 .v40_141 {
   width: 668px;
@@ -404,12 +415,13 @@ body {
 .v70_2 {
   width: 613px;
   height: 536px;
-  background: url("../images/images/v70_2.png");
+  background: url("../images/v70_2.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
+  transform: rotate(-50deg);
   top: 3461px;
   left: 1613px;
   overflow: hidden;
@@ -912,7 +924,7 @@ body {
 .v96_36 {
   width: 389px;
   height: 455px;
-  background: url("../images/v96_36.png");
+  background: url("../images/Newton.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1142,7 +1154,7 @@ body {
 .v137_50 {
   width: 418px;
   height: 234px;
-  background: url("../images/v137_50.png");
+  background: url("../images/Group\ 6.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
