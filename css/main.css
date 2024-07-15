@@ -37,19 +37,6 @@ body {
     -moz-text-fill-color: transparent;
     text-fill-color: transparent;
 }
-.v33_9 {
-  width: 100px;
-  height: 32px;
-  background: url("../images/v33_9.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 42px;
-  left: 1758px;
-  overflow: hidden;
-}
 .body-font {
   color: rgba(255, 255, 255, 1);
   font-family: Ruda;
@@ -715,7 +702,6 @@ body {
   opacity: 1;
   position: absolute;
   top: 12px;
-  left: 250px;
   overflow: hidden;
 }
 .v89_17 {
@@ -1327,14 +1313,14 @@ body {
   width: 77px;
   color: rgba(255,255,255,1);
   position: absolute;
-  top: 77px;
-  left: 0px;
+  top: 220px;
+  left: 280px;
   font-family: Ruda;
   font-weight: Black;
   font-size: 27px;
   opacity: 1;
   text-align: left;
-  transform: rotate(-90deg);
+  transform: rotate();
 }
 .v180_53 {
   width: 77px;
