@@ -3,17 +3,20 @@
 }
 body {
   font-size: 14px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .v33_2 {
   width: 100%;
-  height: 6365px;
+  height: 4865px;
   background: url("../images/Default Background.png");
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  overflow: hidden;
+  overflow: visible;
 }
 .v34_21 {
   width: 100%;
@@ -704,6 +707,18 @@ body {
   top: 12px;
   overflow: hidden;
 }
+
+.footer-logo {
+  width: 340px;
+  height: 86px;
+  background: url("../images/v33_6.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-left: -27px;
+  opacity: 1;
+}
+
 .v89_17 {
   width: 313px;
   height: 85px;
