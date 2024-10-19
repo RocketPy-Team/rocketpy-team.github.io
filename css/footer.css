@@ -63,9 +63,11 @@
 
 .footer-distributed .footer-company-name {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: normal;
   margin: 0;
+  position: relative;
+  top: 10px;
 }
 
 /* Footer Center */
