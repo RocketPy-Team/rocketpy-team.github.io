@@ -43,7 +43,7 @@ body {
   position: absolute;
   top: 800px;
   left: 10%;
-  background: linear-gradient(rgba(180, 181, 205, 1), rgba(205, 205, 205, 1)); 
+  background: linear-gradient(rgba(180, 181, 205, 1), rgba(205, 205, 205, 1));
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
