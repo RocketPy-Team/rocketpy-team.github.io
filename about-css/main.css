@@ -1395,3 +1395,107 @@ body {
   border-bottom-right-radius: 50px;
   overflow: hidden;
 }
+
+/* ============================================
+   RESPONSIVE DESIGN FOR ABOUT PAGE
+   ============================================ */
+
+/* Tablets and mobile devices */
+@media (max-width: 1024px) {
+  .v89_33 {
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Reset all absolutely positioned elements to flow layout */
+  .v89_136,
+  .v89_137,
+  .v89_138,
+  .v89_139,
+  .v89_140,
+  .v89_141,
+  .v89_142,
+  .v89_143,
+  .v89_144,
+  .v89_145,
+  .v89_146,
+  .v89_147,
+  .v89_148,
+  .v89_149,
+  .v89_150,
+  .v89_151,
+  .v89_152,
+  .v89_153,
+  .v89_154,
+  .v89_155,
+  .v89_156,
+  .v89_157,
+  .v89_158,
+  .v89_159,
+  .v89_160,
+  .v89_161,
+  .v89_162,
+  .v89_163,
+  .v89_164,
+  .v89_165,
+  .v89_166,
+  .v89_167,
+  .v89_168,
+  .v89_169 {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 90%;
+    max-width: 500px;
+    margin: 15px auto;
+    display: block;
+  }
+
+  /* Team member profile images */
+  .v89_140,
+  .v89_145,
+  .v89_152,
+  .v89_159,
+  .v89_166 {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+  }
+
+  /* Social media icons */
+  .v89_138,
+  .v89_143,
+  .v89_150,
+  .v89_157,
+  .v89_164 {
+    width: 35px;
+    height: 35px;
+    margin: 10px auto;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  .v89_137,
+  .v89_142,
+  .v89_147,
+  .v89_154,
+  .v89_161 {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .v89_141,
+  .v89_148,
+  .v89_155,
+  .v89_162,
+  .v89_169 {
+    font-size: 14px;
+  }
+}

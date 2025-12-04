@@ -1,0 +1,20 @@
+{
+  "name": "RocketPy Landing Page",
+  "short_name": "RocketPy",
+  "description": "Advanced rocket trajectory simulator for aerospace engineering",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030B28",
+  "theme_color": "#030B28",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["education", "science", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

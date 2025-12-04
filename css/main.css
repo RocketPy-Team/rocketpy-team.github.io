@@ -39,18 +39,31 @@ body {
   text-decoration: none;
   color: white;
   font-size: 40px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.8;
+  transform: scale(1.1);
+  will-change: transform, opacity;
+}
+
+.button:focus {
+  outline: 2px solid white;
+  outline-offset: 4px;
 }
 
 .v33_2 {
   width: 100%;
   height: 3400px;
   min-height: 100vh;
-  aspect-ratio: auto;
-  background: url("../images/Default Background.png");
-  opacity: 1;
+  background: url("../images/Default Background.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
   position: relative;
-  top: 0px;
-  left: 0px;
   overflow: hidden;
 }
 .v37_87 {
@@ -58,12 +71,15 @@ body {
   position: absolute;
   top: 800px;
   left: 10%;
-  background: linear-gradient(rgba(180, 181, 205, 1), rgba(205, 205, 205, 1));
+  background: linear-gradient(
+    180deg,
+    rgba(180, 181, 205, 1),
+    rgba(205, 205, 205, 1)
+  );
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  color: transparent;
 }
 
 .v33_17 {
@@ -82,11 +98,7 @@ body {
   width: auto;
   height: 400px;
   aspect-ratio: 1 / 1;
-  background: url("../images/v35_22.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  background: url("../images/v35_22.png") no-repeat center center / cover;
   position: absolute;
   top: 30px;
   left: 80%;
@@ -99,12 +111,15 @@ body {
   top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(rgba(228, 228, 228, 1), rgba(255, 195, 121, 1));
+  background: linear-gradient(
+    180deg,
+    rgba(228, 228, 228, 1),
+    rgba(255, 195, 121, 1)
+  );
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  color: transparent;
   text-align: center;
   display: block;
 }
@@ -197,60 +212,41 @@ body {
   color: #fff;
 }
 
-.name {
-  color: #fff;
-}
-.name {
-  color: #fff;
-}
-
-.name {
-  color: #fff;
-}
-
 .v73_47 {
   width: 864px;
   position: absolute;
   top: 1750px;
   left: 10%;
   background: linear-gradient(
+    180deg,
     rgba(180, 181, 205, 1),
-    rgba(180, 181, 205, 0.7699999809265137)
+    rgba(180, 181, 205, 0.77)
   );
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  color: transparent;
 }
 .v102_62 {
   width: 60%;
-  color: linear-gradient(
-    rgba(180, 181, 205, 1),
-    rgba(180, 181, 205, 0.7699999809265137)
-  );
   position: relative;
   top: 2500px;
   left: 20%;
   background: linear-gradient(
+    180deg,
     rgba(180, 181, 205, 1),
-    rgba(180, 181, 205, 0.7699999809265137)
+    rgba(180, 181, 205, 0.77)
   );
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  color: transparent;
 }
 .v40_141 {
   width: 200px;
   height: auto;
   aspect-ratio: 1 / 1;
-  background: url("../images/v40_141.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  background: url("../images/v40_141.png") no-repeat center center / cover;
   position: absolute;
   top: 20%;
   left: -10%;
@@ -997,4 +993,101 @@ body {
 .icon-max-width {
   max-width: 50px; /* Set the maximum width */
   height: auto; /* Maintain aspect ratio */
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile First Approach
+   ============================================ */
+
+/* Base mobile styles (320px+) - Most styles above apply */
+
+/* Small tablets and large phones (481px+) */
+@media (min-width: 481px) {
+  .body-font {
+    font-size: 28px;
+  }
+  .body-title {
+    font-size: 56px;
+  }
+}
+
+/* Tablets (768px+) */
+@media (max-width: 768px) {
+  /* Make container responsive */
+  .v33_2 {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Adjust button container for mobile */
+  .button-container {
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(33, 35, 50, 0.85);
+  }
+
+  .button {
+    font-size: 28px;
+    margin: 0 8px;
+  }
+
+  /* Make absolutely positioned elements responsive */
+  .v37_87,
+  .v33_17,
+  .v35_22,
+  .v35_50,
+  .v37_94,
+  .v73_37,
+  .v73_51,
+  .v73_68,
+  .v73_83,
+  .v73_97,
+  .v89_2,
+  .v89_17 {
+    position: relative;
+    left: auto;
+    right: auto;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    top: auto;
+  }
+
+  /* Adjust image sizes for mobile */
+  .v35_22 {
+    height: 250px;
+    background-size: contain;
+  }
+
+  /* Make text more readable on mobile */
+  .body-font {
+    font-size: 20px;
+    padding: 0 15px;
+  }
+
+  .body-title {
+    font-size: 36px;
+    padding: 0 15px;
+  }
+}
+
+/* Desktop (1025px+) - Original desktop styles maintained */
+@media (min-width: 1025px) {
+  .body-font {
+    font-size: 25px;
+  }
+  .body-title {
+    font-size: 51px;
+  }
+}
+
+/* Large screens (1441px+) */
+@media (min-width: 1441px) {
+  .v33_2 {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
 }
