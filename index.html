@@ -36,24 +36,18 @@
     />
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#030b28" />
 
-    <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#030B28" />
-
-    <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://docs.rocketpy.org" />
     <link rel="dns-prefetch" href="https://github.com" />
     <link rel="dns-prefetch" href="https://discord.com" />
-
-    <!-- Consolidated Google Fonts with font-display for performance -->
     <link
       href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;700&family=Rubik:wght@400;500;700&family=Open+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Local stylesheets -->
     <link href="./css/main.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
     <link href="./css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
@@ -64,186 +58,149 @@
   </head>
 
   <body>
-    <div class="v33_2">
+    <div class="page-wrapper">
       <header class="top-bar">
-        <div class="v89_22">
-          <div class="v33_4"></div>
-          <div class="v33_6"></div>
+        <div class="brand-and-cta">
+          <a class="brand-link" href="https://rocketpy.org" aria-label="RocketPy home">
+            <span class="brand-logo"></span>
+          </a>
           <a
             href="https://app.rocketpy.org/"
-            class="v89_17"
+            class="simulate-button panel-bg"
             role="button"
             aria-label="Launch simulation tool"
           >
-            <div class="v33_8"></div>
-            <span class="v33_10">SIMULATE</span>
-            <div class="v89_11"></div>
+            <span class="simulate-icon"></span>
+            <span>SIMULATE</span>
           </a>
         </div>
-        <nav class="button-container" aria-label="Main navigation">
-          <a href="./about.html" class="button" aria-label="About us"
+        <nav class="social-nav panel-bg" aria-label="Main navigation">
+          <a href="./about.html" class="icon-button" aria-label="About us"
             ><i class="fa-solid fa-users"></i
           ></a>
           <a
             href="https://docs.rocketpy.org/en/latest/index.html"
-            class="button"
+            class="icon-button"
             aria-label="Documentation"
             ><i class="fa-solid fa-book"></i
           ></a>
           <a
             href="https://github.com/RocketPy-Team/RocketPy"
-            class="button"
+            class="icon-button"
             aria-label="GitHub repository"
             ><i class="fa-brands fa-github"></i
           ></a>
           <a
             href="https://www.instagram.com/rocketpyteam"
-            class="button"
+            class="icon-button"
             aria-label="Instagram"
             ><i class="fa-brands fa-instagram"></i
           ></a>
           <a
             href="https://www.linkedin.com/company/rocketpy"
-            class="button"
+            class="icon-button"
             aria-label="LinkedIn"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
           <a
             href="https://www.youtube.com/@rocketpyteam5828"
-            class="button"
+            class="icon-button"
             aria-label="YouTube"
             ><i class="fa-brands fa-youtube"></i
           ></a>
         </nav>
       </header>
 
-      <main>
-        <section class="hero" aria-labelledby="hero-heading">
-          <div class="section-content">
-            <h2 id="hero-heading" class="v35_50 body-title">
-              The sky is not the limit!
-            </h2>
-            <div class="grid-2-col">
-              <div class="col-left">
-                <p class="v33_17 body-font">
-                  RocketPy is an innovative rocket trajectory simulator that
-                  includes features never seen before in the state-of-the-art
-                  rocket trajectory simulators.
-                </p>
-                <div class="v89_25"></div>
-              </div>
-              <div class="col-right">
-                <div
-                  class="v35_22"
-                  role="img"
-                  aria-label="RocketPy logo illustration"
-                ></div>
-              </div>
+      <main class="main-content">
+        <section class="hero-section panel-bg" aria-labelledby="hero-heading">
+          <h1 id="hero-heading" class="hero-tagline">The sky is not the limit!</h1>
+          <div class="split-layout">
+            <div class="text-column">
+              <p class="section-text">
+                RocketPy is an innovative rocket trajectory simulator that includes
+                features never seen before in the state-of-the-art rocket trajectory
+                simulators.
+              </p>
+              <div class="hero-plot-graphic"></div>
+            </div>
+            <div class="media-column">
+              <div class="hero-logo-graphic" role="img" aria-label="RocketPy logo illustration"></div>
             </div>
           </div>
-          <!-- Floating / decorative graphics -->
-          <div class="v35_80"></div>
-          <div class="v35_81"></div>
-          <div class="v37_85"></div>
         </section>
 
-        <section class="features" aria-labelledby="features-heading">
-          <div class="section-content">
-            <h2 id="features-heading" class="v37_87 body-title">
-              Let's be realistic
-            </h2>
-            <div class="grid-2-col">
-              <div class="col-left">
-                <p class="v37_88 body-font">
-                  RocketPy's environment construction uses weather data from
-                  several meteorological agencies, providing precise information
-                  about atmospheric conditions and taking into account different
-                  kinds of uncertainties associated with the mathematical models
-                  of the phenomena.
-                  <a
-                    href="https://ascelibrary.org/doi/10.1061/%28ASCE%29AS.1943-5525.0001331"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read our paper on the Journal of Aerospace Engineering
-                  </a>
-                  to know more about the mathematical models and the software
-                  architecture.
-                </p>
-              </div>
-              <div class="col-right">
-                <div class="v40_140"></div>
-              </div>
+        <section class="content-section panel-bg" aria-labelledby="features-heading">
+          <h2 id="features-heading" class="section-title">Let's be realistic</h2>
+          <div class="split-layout">
+            <div class="text-column">
+              <p class="section-text">
+                RocketPy's environment construction uses weather data from several
+                meteorological agencies, providing precise information about atmospheric
+                conditions and taking into account different kinds of uncertainties
+                associated with the mathematical models of the phenomena.
+                <a
+                  href="https://ascelibrary.org/doi/10.1061/%28ASCE%29AS.1943-5525.0001331"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read our paper on the Journal of Aerospace Engineering
+                </a>
+                to know more about the mathematical models and the software architecture.
+              </p>
+            </div>
+            <div class="media-column">
+              <div class="environment-graphic"></div>
             </div>
           </div>
-          <div class="v41_142"></div>
         </section>
 
-        <section class="predictions" aria-labelledby="predictions-heading">
-          <div class="section-content">
-            <h2 id="predictions-heading" class="v73_47 body-title">
-              Simulation is all about predictions
-            </h2>
-            <div class="grid-2-col">
-              <div class="col-left">
-                <p class="v73_46 body-font">
-                  A key feature in RocketPy is the Monte Carlo analysis, which
-                  shows the confidence interval of the impact coordinates.
-                  RocketPy was also successfully validated for several rockets,
-                  with apogee predictions showing deviations of the order of 1%
-                  when compared to actual flight data. See a list of comparisons
-                  and examples in our
-                  <a
-                    href="https://docs.rocketpy.org/en/latest/examples/index.html"
-                    rel="noopener noreferrer"
-                  >
-                    documentation
-                  </a>
-                  .
-                </p>
-              </div>
-              <div class="col-right">
-                <div class="v36_82"></div>
-              </div>
+        <section class="content-section panel-bg" aria-labelledby="predictions-heading">
+          <h2 id="predictions-heading" class="section-title">Simulation is all about predictions</h2>
+          <div class="split-layout">
+            <div class="text-column">
+              <p class="section-text">
+                A key feature in RocketPy is the Monte Carlo analysis, which shows the
+                confidence interval of the impact coordinates. RocketPy was also
+                successfully validated for several rockets, with apogee predictions
+                showing deviations of the order of 1% when compared to actual flight
+                data. See a list of comparisons and examples in our
+                <a
+                  href="https://docs.rocketpy.org/en/latest/examples/index.html"
+                  rel="noopener noreferrer"
+                >
+                  documentation
+                </a>
+                .
+              </p>
+            </div>
+            <div class="media-column">
+              <div class="predictions-graphic"></div>
             </div>
           </div>
-          <div class="v73_44"></div>
         </section>
 
-        <section class="community" aria-labelledby="community-heading">
-          <div class="section-content">
-            <h2 id="community-heading" class="v102_62 body-title">
-              From rocketeers to rocketeers
-            </h2>
-            <div class="grid-2-col">
-              <div class="col-left">
-                <p class="v50_35 body-font">
-                  RocketPy is an Open Source software created by rocket
-                  enthusiasts. Since it is open source, each and every one of
-                  you is more than welcome to be a part of it. Check out our
-                  project on
-                  <a
-                    href="https://github.com/RocketPy-Team/RocketPy"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >.
-                </p>
-              </div>
-              <div class="col-right">
-                <div class="v73_37"></div>
-              </div>
+        <section class="content-section panel-bg" aria-labelledby="community-heading">
+          <h2 id="community-heading" class="section-title">From rocketeers to rocketeers</h2>
+          <div class="split-layout">
+            <div class="text-column">
+              <p class="section-text">
+                RocketPy is an Open Source software created by rocket enthusiasts.
+                Since it is open source, each and every one of you is more than welcome
+                to be a part of it. Check out our project on
+                <a href="https://github.com/RocketPy-Team/RocketPy" rel="noopener noreferrer">GitHub</a>.
+              </p>
+            </div>
+            <div class="media-column">
+              <div class="community-graphic"></div>
             </div>
           </div>
-          <!-- Floating / decorative graphics -->
-          <div class="v40_141"></div>
-          <div class="v70_2"></div>
         </section>
       </main>
     </div>
+
     <footer class="footer-distributed" id="footer">
       <div class="footer-left">
         <div class="footer-logo"></div>
-
         <p class="footer-company-name">RocketPy Team © 2025</p>
       </div>
 
@@ -251,7 +208,6 @@
         <div>
           <i class="fa fa-map-marker icon-max-width"></i>
           <p>
-            <!-- <span>380 Av. Prof. Luciano Gualberto</span> -->
             <a href="https://maps.app.goo.gl/qFAGgBq1LqceRkjj6" target="_blank"
               >São Paulo, Brazil</a
             >
@@ -260,9 +216,7 @@
         <div>
           <i class="fa-brands fa-discord icon-max-width"></i>
           <p>
-            <a href="https://discord.com/invite/b6xYnNh">
-              Join us on discord!
-            </a>
+            <a href="https://discord.com/invite/b6xYnNh"> Join us on discord! </a>
           </p>
         </div>
       </div>
@@ -270,8 +224,8 @@
       <div class="footer-right">
         <p class="footer-company-about">
           <span>About us</span>
-          RocketPy Team is responsible for maintaining and developing the
-          RocketPy project, an open-source rocket trajectory simulator.
+          RocketPy Team is responsible for maintaining and developing the RocketPy
+          project, an open-source rocket trajectory simulator.
         </p>
 
         <div class="footer-icons">
