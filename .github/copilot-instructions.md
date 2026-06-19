@@ -24,9 +24,9 @@ This is a **static marketing website** for RocketPy (rocketpy.org) - an open-sou
 - **Color scheme**: Dark blue/space theme with gradients (`rgba(33, 35, 50, 0.65)`, `rgba(3, 11, 40, 1)`)
 
 ### Image Assets
-- Background images referenced in CSS (e.g., `url("../images/Default Background.png")`)
-- Images use cryptic names from design tool exports (`v35_22.png`, `v73_37.png`)
-- Favicon and logo files in `images/` directory
+- Background images are referenced in CSS using optimized assets (e.g., `url("../images/hero-background.png")`)
+- Section illustrations use descriptive filenames (e.g., `hero-logo-illustration.png`, `community-visual.png`)
+- Favicon and logo files are in `images/` directory
 
 ## Development Workflow
 
