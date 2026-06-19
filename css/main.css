@@ -29,8 +29,9 @@ body {
 .button-container {
   position: absolute;
   top: 25px;
-  right: 10px;
+  right: 40px;
   background-color: rgba(33, 35, 50, 0.65);
+  z-index: 10;
 }
 
 .button {
@@ -56,61 +57,67 @@ body {
   outline-offset: 4px;
 }
 
+/* Page Layout Wrapper */
 .v33_2 {
   width: 100%;
-  height: 3400px;
   min-height: 100vh;
   background: url("../images/Default Background.png") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
-}
-.v37_87 {
-  width: 400px;
-  position: absolute;
-  top: 800px;
-  left: 10%;
-  background: linear-gradient(
-    180deg,
-    rgba(180, 181, 205, 1),
-    rgba(205, 205, 205, 1)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
-.v33_17 {
-  width: 600px;
-  max-width: 600px;
-  position: absolute;
-  top: 450px;
-  left: 40%;
-  /* font-size: 30px; */
-  word-wrap: break-word; /* Break long words */
-  overflow: hidden; /* Hide overflowed text */
-  white-space: normal; /* Wrap text */
+/* Top Bar Header */
+.top-bar {
+  position: relative;
+  width: 100%;
+  height: 117px;
+  z-index: 100;
+}
+
+/* Layout Grid System */
+.section-content {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
+  position: relative;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.col-left,
+.col-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Overrides for Flow Layout */
+.body-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.body-font {
+  line-height: 1.6;
   text-align: left;
 }
-.v35_22 {
-  width: auto;
-  height: 400px;
-  aspect-ratio: 1 / 1;
-  background: url("../images/v35_22.png") no-repeat center center / cover;
-  position: absolute;
-  top: 30px;
-  left: 80%;
-  overflow: hidden;
-}
 
+/* Section Specific Elements */
+
+/* Hero Title: The sky is not the limit! */
 .v35_50 {
-  width: 650px;
-  position: absolute;
-  top: 250px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
   background: linear-gradient(
     180deg,
     rgba(228, 228, 228, 1),
@@ -122,217 +129,244 @@ body {
   color: transparent;
   text-align: center;
   display: block;
+  font-family: Ruda;
+  font-weight: bolder;
+  font-size: 51px;
+  margin-bottom: 50px;
 }
 
+/* Hero Description */
+.v33_17 {
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+/* Hero Logo Illustration */
+.v35_22 {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  aspect-ratio: 1 / 1;
+  background: url("../images/v35_22.png") no-repeat center center / cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Hero Plot Graphic (Group 5.png) */
+.v89_25 {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 450 / 412;
+  background: url("../images/Group 5.png") no-repeat center center / cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* Section Ellipse Dividers */
+.v37_85,
+.v41_142,
+.v73_44 {
+  width: 90%;
+  height: 6px;
+  background: rgba(196, 196, 196, 0.4);
+  opacity: 1;
+  margin: 50px auto;
+  border-radius: 50%;
+  position: relative;
+  top: auto;
+  left: auto;
+}
+
+/* Feature 1 Heading: Let's be realistic */
+.v37_87 {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(180, 181, 205, 1),
+    rgba(205, 205, 205, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: Ruda;
+  font-weight: bolder;
+  font-size: 51px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Feature 1 Text */
+.v37_88 {
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  font-family: Ruda;
+  font-weight: Black;
+  opacity: 1;
+  text-align: left;
+}
+.v37_88 a {
+  color: #ffc379;
+  text-decoration: underline;
+}
+
+/* Feature 1 Image: Group 2.png */
+.v40_140 {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  aspect-ratio: 1 / 1;
+  background: url("../images/Group\ 2.png") no-repeat center center / cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Feature 2 Heading: Simulation is all predictions */
+.v73_47 {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(180, 181, 205, 1),
+    rgba(180, 181, 205, 0.77)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: Ruda;
+  font-weight: bolder;
+  font-size: 51px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Feature 2 Text (Monte Carlo) */
+.v73_46 {
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  font-family: Ruda;
+  font-weight: Black;
+  opacity: 1;
+  text-align: left;
+}
+.v73_46 a {
+  color: #ffc379;
+  text-decoration: underline;
+}
+
+/* Feature 2 Image: v36_82.png */
+.v36_82 {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  aspect-ratio: 1 / 1;
+  background: url("../images/v36_82.png") no-repeat center center / cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Community Heading: From rocketeers to rocketeers */
+.v102_62 {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(180, 181, 205, 1),
+    rgba(180, 181, 205, 0.77)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: Ruda;
+  font-weight: bolder;
+  font-size: 51px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Community Text */
+.v50_35 {
+  width: 100%;
+  color: rgba(251, 251, 251, 1);
+  font-family: Ruda;
+  font-weight: Black;
+  opacity: 1;
+  text-align: left;
+}
+.v50_35 a {
+  color: #ffc379;
+  text-decoration: underline;
+}
+
+/* Community Image: v73_37.png */
+.v73_37 {
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 671 / 503;
+  background: url("../images/v73_37.png") no-repeat center center / cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Floating Decorative Graphics */
 .v35_80 {
   width: 196px;
   height: auto;
   aspect-ratio: 196 / 110;
-  background: url("../images/v35_80.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  background: url("../images/v35_80.png") no-repeat center center / cover;
+  opacity: 0.8;
   position: absolute;
-  top: 986px;
-  left: 90%;
+  top: 15%;
+  right: 2%;
   overflow: hidden;
+  pointer-events: none;
 }
+
 .v35_81 {
   width: 337px;
   height: 189px;
-  background: url("../images/v35_81.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  background: url("../images/v35_81.png") no-repeat center center / cover;
+  opacity: 0.8;
   position: absolute;
-  top: 1700px;
-  left: -15%;
+  bottom: -40px;
+  left: -5%;
   overflow: hidden;
-}
-.v37_85 {
-  width: 90%;
-  height: 6px;
-  background: rgba(196, 196, 196, 1);
-  opacity: 1;
-  position: relative;
-  top: 750px;
-  left: 5%;
-  border-radius: 50%;
-}
-.v41_142 {
-  width: 90%;
-  height: 5px;
-  background: rgba(196, 196, 196, 1);
-  opacity: 1;
-  position: relative;
-  top: 1640px;
-  left: 5%;
-  border-radius: 50%;
-}
-.v73_44 {
-  width: 90%;
-  height: 5px;
-  background: rgba(196, 196, 196, 1);
-  opacity: 1;
-  position: absolute;
-  top: 2400px;
-  left: 5%;
-  border-radius: 50%;
-}
-.v37_88 {
-  width: 606px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 950px;
-  left: 10%;
-  font-family: Ruda;
-  font-weight: Black;
-  /* font-size: 31px; */
-  opacity: 1;
-  text-align: left;
-}
-.v40_140 {
-  width: 400px;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  background: url("../images/Group\ 2.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 1200px;
-  left: 65%;
-  overflow: hidden;
+  pointer-events: none;
 }
 
-.name {
-  color: #fff;
-}
-
-.v73_47 {
-  width: 864px;
-  position: absolute;
-  top: 1750px;
-  left: 10%;
-  background: linear-gradient(
-    180deg,
-    rgba(180, 181, 205, 1),
-    rgba(180, 181, 205, 0.77)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-.v102_62 {
-  width: 60%;
-  position: relative;
-  top: 2500px;
-  left: 20%;
-  background: linear-gradient(
-    180deg,
-    rgba(180, 181, 205, 1),
-    rgba(180, 181, 205, 0.77)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
 .v40_141 {
   width: 200px;
   height: auto;
   aspect-ratio: 1 / 1;
   background: url("../images/v40_141.png") no-repeat center center / cover;
+  opacity: 0.8;
   position: absolute;
-  top: 20%;
-  left: -10%;
+  top: -50px;
+  left: -5%;
   overflow: hidden;
-}
-.v36_82 {
-  width: 350px;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  background: url("../images/v36_82.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 1971px;
-  left: 80%;
-  overflow: hidden;
+  pointer-events: none;
 }
 
-.v73_37 {
-  width: 650px;
-  height: auto;
-  aspect-ratio: 671 / 503;
-  background: url("../images/v73_37.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 2750px;
-  left: 70%;
-  overflow: hidden;
-}
 .v70_2 {
   width: 400px;
   height: auto;
   aspect-ratio: 613 / 536;
-  background: url("../images/v70_2.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
+  background: url("../images/v70_2.png") no-repeat center center / cover;
+  opacity: 0.8;
+  position: absolute;
+  bottom: -80px;
+  left: -5%;
   transform: rotate(-50deg);
-  top: 2500px;
-  left: -7.5%;
   overflow: hidden;
+  pointer-events: none;
 }
-.v50_35 {
-  width: 666px;
-  color: rgba(251, 251, 251, 1);
-  position: absolute;
-  top: 2650px;
-  left: 20%;
-  font-family: Ruda;
-  font-weight: Black;
-  /* font-size: 34px; */
-  opacity: 1;
-  text-align: left;
-}
-.v73_46 {
-  width: 631px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 1900px;
-  left: 15%;
-  font-family: Ruda;
-  font-weight: Black;
-  /* font-size: 31px; */
-  opacity: 1;
-  text-align: left;
-}
-.v89_25 {
-  width: 300px;
-  height: auto;
-  aspect-ratio: 450 / 412;
-  background: url("../images/Group 5.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 370px;
-  left: 5%;
-  overflow: hidden;
+
+.name {
+  color: #fff;
 }
 .v75_23 {
   width: 202px;
@@ -440,23 +474,17 @@ body {
   border: 4.174455165863037px solid rgba(103, 49, 216, 1);
 }
 .v89_22 {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 117px;
-  /* background: url("../images/v89_22.png"); */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 3px;
   overflow: hidden;
 }
 .v33_4 {
   width: 100%;
   height: 117px;
   background: rgba(33, 35, 50, 0.35);
-  opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -467,27 +495,21 @@ body {
   width: 300px;
   height: auto;
   aspect-ratio: 340 / 86;
-  background: url("../images/logo-white.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url("../images/logo-white.png") no-repeat center center / cover;
   opacity: 1;
   position: absolute;
   top: 12px;
+  left: 40px;
   overflow: hidden;
 }
 
 .footer-logo {
   width: 340px;
   height: 86px;
-  background: url("../images/logo-white.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url("../images/logo-white.png") no-repeat center center / cover;
   margin-left: -27px;
   opacity: 1;
 }
-
 .v89_17 {
   width: 313px;
   height: 85px;
@@ -496,10 +518,10 @@ body {
   background-position: center center;
   background-size: cover;
   opacity: 1;
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the element */
+  transform: translate(-50%, -50%);
   overflow: hidden;
   border: none;
 }
@@ -539,7 +561,7 @@ body {
 .v89_11 {
   width: 58px;
   height: 58px;
-  background: url("../images/Vector.png");
+  background: url("../images/Vector.png") no-repeat center center / cover;
   opacity: 1;
   position: absolute;
   top: 14px;
@@ -1011,66 +1033,127 @@ body {
   }
 }
 
-/* Tablets (768px+) */
+/* Tablets & Mobile (768px and down) */
 @media (max-width: 768px) {
-  /* Make container responsive */
   .v33_2 {
     height: auto;
     min-height: 100vh;
   }
 
-  /* Adjust button container for mobile */
+  /* Top Bar Header Responsive Stack */
+  .top-bar {
+    height: auto;
+    background: rgba(33, 35, 50, 0.95);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .v89_22 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .v33_4 {
+    display: none; /* Hide background overlay */
+  }
+  .v33_6 {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .v89_17 {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
   .button-container {
     position: relative;
-    top: 0;
-    right: 0;
+    top: auto;
+    right: auto;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
+    margin: 0 auto;
     background-color: rgba(33, 35, 50, 0.85);
   }
-
   .button {
     font-size: 28px;
     margin: 0 8px;
   }
 
-  /* Make absolutely positioned elements responsive */
-  .v37_87,
-  .v33_17,
-  .v35_22,
-  .v35_50,
-  .v37_94,
-  .v73_37,
-  .v73_51,
-  .v73_68,
-  .v73_83,
-  .v73_97,
-  .v89_2,
-  .v89_17 {
-    position: relative;
-    left: auto;
-    right: auto;
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    top: auto;
+  /* Grid Stack on Mobile */
+  .grid-2-col {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .col-left,
+  .col-right {
+    align-items: center;
+    text-align: center;
   }
 
-  /* Adjust image sizes for mobile */
+  /* Sections Padding */
+  .section-content {
+    padding: 40px 0;
+  }
+
+  /* Typography on Mobile */
+  .body-title {
+    font-size: 36px !important;
+    text-align: center !important;
+    margin-bottom: 25px;
+  }
+  .body-font {
+    font-size: 18px !important;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .v35_50 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .v37_87,
+  .v73_47,
+  .v102_62 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* Scale illustrations on Mobile */
   .v35_22 {
     height: 250px;
-    background-size: contain;
+    max-width: 250px;
+  }
+  .v40_140 {
+    height: 250px;
+    max-width: 250px;
+  }
+  .v36_82 {
+    height: 250px;
+    max-width: 250px;
+  }
+  .v73_37 {
+    max-width: 100%;
+    height: auto;
   }
 
-  /* Make text more readable on mobile */
-  .body-font {
-    font-size: 20px;
-    padding: 0 15px;
-  }
-
-  .body-title {
-    font-size: 36px;
-    padding: 0 15px;
+  /* Hide decorative floating elements to prevent overflow */
+  .v35_80,
+  .v35_81,
+  .v40_141,
+  .v70_2 {
+    display: none !important;
   }
 }
 
