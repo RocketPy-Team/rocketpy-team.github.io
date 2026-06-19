@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RocketPy Team - About</title>
+    <title>RocketPy Team - About Us</title>
     <meta
       name="description"
-      content="The RocketPy Team about page is temporarily unavailable while we prepare updated team information."
+      content="Meet the RocketPy Team - the aerospace engineers, developers, and rocketeers behind the advanced open-source trajectory simulator."
     />
-    <meta property="og:title" content="RocketPy Team - About" />
+    <meta property="og:title" content="RocketPy Team - About Us" />
     <meta
       property="og:description"
-      content="The RocketPy Team about page is temporarily unavailable while we prepare updated team information."
+      content="Meet the team behind the RocketPy rocket trajectory simulator."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rocketpy.org/about.html" />
@@ -22,10 +22,10 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RocketPy Team - About" />
+    <meta name="twitter:title" content="RocketPy Team - About Us" />
     <meta
       name="twitter:description"
-      content="The RocketPy Team about page is temporarily unavailable while we prepare updated team information."
+      content="Meet the team behind the RocketPy rocket trajectory simulator."
     />
     <meta
       name="twitter:image"
@@ -33,38 +33,389 @@
     />
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#030B28" />
-    <meta http-equiv="refresh" content="0; url=https://rocketpy.org/" />
-    <link rel="canonical" href="https://rocketpy.org/" />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+    <meta name="theme-color" content="#030b28" />
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: Arial, sans-serif;
-        background: #030b28;
-        color: #ffffff;
-        text-align: center;
-        padding: 1.5rem;
-      }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://docs.rocketpy.org" />
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;700&family=Rubik:wght@400;500;700&family=Open+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-      a {
-        color: #69b4ff;
-      }
-    </style>
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/about.css" rel="stylesheet" />
+    <link href="./css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="./css/font-awesome/css/solid.min.css" rel="stylesheet" />
+    <link href="./css/font-awesome/css/brands.min.css" rel="stylesheet" />
   </head>
+
   <body>
-    <main>
-      <h1>Redirecting to RocketPy homepage...</h1>
-      <p>
-        The About page is being rebuilt. If you are not redirected, continue to
-        <a href="https://rocketpy.org/">rocketpy.org</a>.
-      </p>
-    </main>
+    <div class="page-wrapper">
+      <header class="top-bar">
+        <div class="brand-and-cta">
+          <a class="brand-link" href="./index.html" aria-label="RocketPy home">
+            <span class="brand-logo"></span>
+          </a>
+        </div>
+        <nav class="social-nav panel-bg" aria-label="Main navigation">
+          <a href="./about.html" class="icon-button" aria-label="About us"
+            ><i class="fa-solid fa-users"></i
+          ></a>
+          <a
+            href="https://docs.rocketpy.org/en/latest/index.html"
+            class="icon-button"
+            aria-label="Documentation"
+            ><i class="fa-solid fa-book"></i
+          ></a>
+          <a
+            href="https://github.com/RocketPy-Team/RocketPy"
+            class="icon-button"
+            aria-label="GitHub repository"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/rocketpyteam"
+            class="icon-button"
+            aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/rocketpy"
+            class="icon-button"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="about-hero panel-bg">
+          <h1 class="about-title">Meet the RocketPy Team</h1>
+          <p class="about-subtitle">
+            RocketPy is built and maintained by a global community of aerospace
+            engineers, developers, and rocketeers. Meet the active members who
+            drive the simulator forward.
+          </p>
+
+          <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">
+              All Members
+            </button>
+            <button class="filter-btn" data-filter="general-management">
+              Management
+            </button>
+            <button class="filter-btn" data-filter="library-development">
+              Library Dev
+            </button>
+            <button class="filter-btn" data-filter="web-development">
+              Web Dev
+            </button>
+            <button class="filter-btn" data-filter="public-relations">
+              PR & Outreach
+            </button>
+          </div>
+
+          <div class="team-grid" id="teamGrid">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer-distributed" id="footer">
+      <div class="footer-left">
+        <div class="footer-logo"></div>
+        <p class="footer-company-name">RocketPy Team © 2025</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker icon-max-width"></i>
+          <p>
+            <a href="https://maps.app.goo.gl/qFAGgBq1LqceRkjj6" target="_blank"
+              >São Paulo, Brazil</a
+            >
+          </p>
+        </div>
+        <div>
+          <i class="fa-brands fa-discord icon-max-width"></i>
+          <p>
+            <a href="https://discord.com/invite/b6xYnNh">
+              Join us on discord!
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About us</span>
+          RocketPy Team is responsible for maintaining and developing the
+          RocketPy project, an open-source rocket trajectory simulator.
+        </p>
+
+        <div class="footer-icons">
+          <a href="https://www.instagram.com/rocketpyteam"
+            ><i class="fa-brands fa-instagram"></i></a
+          ><a href="https://www.linkedin.com/company/rocketpy"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/RocketPy-Team/RocketPy"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="https://www.youtube.com/@rocketpyteam5828"
+            ><i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const teamMembers = [
+        {
+          name: "Giovani Ceotto",
+          team: "general-management",
+          role: "Creator & Lead Developer",
+          contribution:
+            "Created RocketPy, designed the 6-DOF simulation engine and core flight physics modules.",
+          github: "giovaniceotto",
+          linkedin: "giovaniceotto",
+        },
+        {
+          name: "Guilherme Fernandes",
+          team: "general-management",
+          role: "Lead Maintainer & Coordinator",
+          contribution:
+            "General project coordination, codebase health, release management, and repository oversight.",
+          github: "Gui-FernandesBR",
+          linkedin: "",
+        },
+        {
+          name: "Mateus Stano",
+          team: "library-development",
+          role: "Core Library Developer",
+          contribution:
+            "Library architecture design, math models, dynamic simulation modules, and testing suites.",
+          github: "MateusStano",
+          linkedin: "",
+        },
+        {
+          name: "Adriano Antongiovanni",
+          team: "library-development",
+          role: "Core Library Developer",
+          contribution:
+            "Aerospace physics engines, variable mass simulations, and mathematical verification.",
+          github: "adriano-antongiovanni",
+          linkedin: "",
+        },
+        {
+          name: "João Gribel",
+          team: "library-development",
+          role: "Core Library Developer",
+          contribution:
+            "Parachute descent modules, flight events, and documentation maintenance.",
+          github: "joaogribel",
+          linkedin: "",
+        },
+        {
+          name: "Oscar Ramirez",
+          team: "library-development",
+          role: "Contributor",
+          contribution:
+            "Scientific computing models and optimization algorithms.",
+          github: "oscar-ramirez",
+          linkedin: "",
+        },
+        {
+          name: "Franz Yuri",
+          team: "library-development",
+          role: "Contributor",
+          contribution:
+            "Multi-stage rocket models and atmospheric datasets integration.",
+          github: "franz-yuri",
+          linkedin: "",
+        },
+        {
+          name: "Rodrigo Schmitt",
+          team: "library-development",
+          role: "Contributor",
+          contribution:
+            "Flight dynamics modeling and flight validation datasets.",
+          github: "rodrigoschmitt",
+          linkedin: "",
+        },
+        {
+          name: "Matheus Molina",
+          team: "library-development",
+          role: "Contributor",
+          contribution:
+            "Atmospheric calculations and environmental data pipelines.",
+          github: "MatheusMolina",
+          linkedin: "",
+        },
+        {
+          name: "Luiz Mota",
+          team: "web-development",
+          role: "Lead Frontend Developer",
+          contribution:
+            "Head of frontend development, architect of the web-based simulation interfaces and visualization tools.",
+          github: "luimot",
+          linkedin: "",
+        },
+        {
+          name: "Lucas Kierulff",
+          team: "web-development",
+          role: "Frontend Developer",
+          contribution:
+            "Designed and built interactive flight trajectory 3D graphs and plots.",
+          github: "lucaskierulff",
+          linkedin: "",
+        },
+        {
+          name: "Lucas Pezente",
+          team: "web-development",
+          role: "Frontend Developer",
+          contribution: "Created dynamic telemetry dashboard UI components.",
+          github: "lucaspezente",
+          linkedin: "",
+        },
+        {
+          name: "Breno Rocha",
+          team: "public-relations",
+          role: "Community Outreach Manager",
+          contribution:
+            "Handles developer relations, coordinates community events, and runs social campaigns.",
+          github: "breno-rocha",
+          linkedin: "",
+        },
+        {
+          name: "Patrick",
+          team: "public-relations",
+          role: "Brand & Public Relations",
+          contribution:
+            "Manages public communications, brand consistency, and external media outreach.",
+          github: "patrick",
+          linkedin: "",
+        },
+      ];
+
+      function getInitials(name) {
+        return name
+          .split(" ")
+          .map((n) => n[0])
+          .slice(0, 2)
+          .join("")
+          .toUpperCase();
+      }
+
+      function getTeamClass(team) {
+        switch (team) {
+          case "general-management":
+            return "team-management";
+          case "library-development":
+            return "team-library";
+          case "web-development":
+            return "team-web";
+          case "public-relations":
+            return "team-pr";
+          default:
+            return "";
+        }
+      }
+
+      function getGradClass(team) {
+        switch (team) {
+          case "general-management":
+            return "grad-management";
+          case "library-development":
+            return "grad-library";
+          case "web-development":
+            return "grad-web";
+          case "public-relations":
+            return "grad-pr";
+          default:
+            return "";
+        }
+      }
+
+      function getRoleClass(team) {
+        switch (team) {
+          case "general-management":
+            return "role-management";
+          case "library-development":
+            return "role-library";
+          case "web-development":
+            return "role-web";
+          case "public-relations":
+            return "role-pr";
+          default:
+            return "";
+        }
+      }
+
+      function renderTeam(filter = "all") {
+        const grid = document.getElementById("teamGrid");
+        grid.innerHTML = "";
+
+        const filtered =
+          filter === "all"
+            ? teamMembers
+            : teamMembers.filter((m) => m.team === filter);
+
+        filtered.forEach((member) => {
+          const initials = getInitials(member.name);
+          const teamClass = getTeamClass(member.team);
+          const gradClass = getGradClass(member.team);
+          const roleClass = getRoleClass(member.team);
+
+          const card = document.createElement("div");
+          card.className = `member-card ${teamClass}`;
+
+          let socialsHTML = "";
+          if (member.github) {
+            socialsHTML += `
+              <a href="https://github.com/${member.github}" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="${member.name} GitHub profile">
+                <i class="fa-brands fa-github"></i>
+              </a>`;
+          }
+          if (member.linkedin) {
+            socialsHTML += `
+              <a href="https://linkedin.com/in/${member.linkedin}" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="${member.name} LinkedIn profile">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>`;
+          }
+
+          card.innerHTML = `
+            <div class="avatar-container">
+              <div class="avatar-ring"></div>
+              <div class="avatar-sphere ${gradClass}">${initials}</div>
+            </div>
+            <h3 class="member-name">${member.name}</h3>
+            <div class="member-role ${roleClass}">${member.role}</div>
+            <p class="member-contrib">${member.contribution}</p>
+            <div class="member-socials">${socialsHTML}</div>
+          `;
+
+          grid.appendChild(card);
+        });
+      }
+
+      // Filter tabs event listeners
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          e.target.classList.add("active");
+          renderTeam(e.target.dataset.filter);
+        });
+      });
+
+      // Initial render
+      renderTeam();
+    </script>
   </body>
 </html>
