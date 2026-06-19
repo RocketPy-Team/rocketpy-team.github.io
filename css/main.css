@@ -8,6 +8,19 @@
   --icon-bg: rgba(20, 25, 45, 0.8);
   --space-section: clamp(3rem, 7vw, 5.5rem);
   --space-content: clamp(1rem, 2.6vw, 1.8rem);
+  --hero-background-image: url("../images/hero-background.png");
+}
+
+@supports (
+  background-image:
+    image-set(url("../images/hero-background.webp") type("image/webp"))
+) {
+  :root {
+    --hero-background-image: image-set(
+      url("../images/hero-background.webp") type("image/webp"),
+      url("../images/hero-background.png") type("image/png")
+    );
+  }
 }
 
 * {
@@ -22,8 +35,9 @@ body {
       rgba(3, 11, 40, 0.94) 0%,
       rgba(3, 11, 40, 0.99) 100%
     ),
-    url("../images/Default Background.png");
+    var(--hero-background-image);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   color: var(--text-primary);
   font-family: "Ruda", sans-serif;
@@ -96,7 +110,12 @@ body::before {
 }
 
 .brand-logo {
-  background: url("../images/v33_6.png") no-repeat center center / contain;
+  background: url("../images/rocketpy-logo-white.png") no-repeat center center /
+    contain;
+  background-image: image-set(
+    url("../images/rocketpy-logo-white.webp") type("image/webp"),
+    url("../images/rocketpy-logo-white.png") type("image/png")
+  );
   display: block;
   height: 48px;
   width: 220px;
@@ -135,7 +154,11 @@ body::before {
 }
 
 .simulate-icon {
-  background: url("../images/v33_9.png") no-repeat center center / contain;
+  background: url("../images/launch-icon.png") no-repeat center center / contain;
+  background-image: image-set(
+    url("../images/launch-icon.webp") type("image/webp"),
+    url("../images/launch-icon.png") type("image/png")
+  );
   display: inline-block;
   height: 14px;
   width: 14px;
@@ -253,44 +276,32 @@ body::before {
 .hero-logo-graphic,
 .environment-graphic,
 .predictions-graphic {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 290px;
+  display: block;
   margin: 0 auto;
   max-width: 330px;
   width: 100%;
 }
 
-.hero-logo-graphic {
-  background-image: url("../images/v35_22.png");
-}
-
-.environment-graphic {
-  background-image: url("../images/v40_94.png");
-}
-
-.predictions-graphic {
-  background-image: url("../images/v36_82.png");
-}
-
 .hero-plot-graphic,
 .community-graphic {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  display: block;
+}
+
+.section-graphic {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
 }
 
 .hero-plot-graphic {
-  background-image: url("../images/Group 5.png");
   height: 190px;
   margin-top: var(--space-content);
   max-width: 320px;
+  width: 100%;
 }
 
 .community-graphic {
-  background-image: url("../images/v73_37.png");
-  height: 220px;
   max-width: 360px;
   width: 100%;
 }
@@ -338,7 +349,11 @@ body::before {
 }
 
 .footer-logo {
-  background-image: url("../images/v33_7.png");
+  background-image: url("../images/rocketpy-logo-white.png");
+  background-image: image-set(
+    url("../images/rocketpy-logo-white.webp") type("image/webp"),
+    url("../images/rocketpy-logo-white.png") type("image/png")
+  );
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;

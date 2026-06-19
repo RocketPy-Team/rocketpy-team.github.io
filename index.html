@@ -23,12 +23,12 @@
     <meta property="og:url" content="https://rocketpy.org" />
     <meta
       property="og:image"
-      content="https://rocketpy.org/images/logo-white.png"
+      content="https://rocketpy.org/images/rocketpy-logo-white.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image"
-      content="https://rocketpy.org/images/logo-white.png"
+      content="https://rocketpy.org/images/rocketpy-logo-white.png"
     />
     <meta
       name="twitter:title"
@@ -133,14 +133,37 @@
                 <span class="simulate-icon"></span>
                 <span>SIMULATE WITH ROCKETPY</span>
               </a>
-              <div class="hero-plot-graphic reveal-item"></div>
+              <picture class="hero-plot-graphic reveal-item">
+                <source
+                  srcset="./images/simulation-plot.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./images/simulation-plot.png"
+                  alt=""
+                  class="section-graphic"
+                  decoding="async"
+                  width="207"
+                  height="190"
+                />
+              </picture>
             </div>
             <div class="media-column">
-              <div
-                class="hero-logo-graphic"
-                role="img"
-                aria-label="RocketPy logo illustration"
-              ></div>
+              <picture class="hero-logo-graphic">
+                <source
+                  srcset="./images/hero-logo-illustration.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./images/hero-logo-illustration.png"
+                  alt="RocketPy logo illustration"
+                  class="section-graphic"
+                  decoding="async"
+                  fetchpriority="high"
+                  width="330"
+                  height="186"
+                />
+              </picture>
             </div>
           </div>
         </section>
@@ -172,7 +195,21 @@
               </p>
             </div>
             <div class="media-column reveal-item">
-              <div class="environment-graphic"></div>
+              <picture class="environment-graphic">
+                <source
+                  srcset="./images/environment-visual.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./images/environment-visual.png"
+                  alt="Atmospheric data visualization"
+                  class="section-graphic"
+                  loading="lazy"
+                  decoding="async"
+                  width="330"
+                  height="280"
+                />
+              </picture>
             </div>
           </div>
         </section>
@@ -203,7 +240,21 @@
               </p>
             </div>
             <div class="media-column reveal-item">
-              <div class="predictions-graphic"></div>
+              <picture class="predictions-graphic">
+                <source
+                  srcset="./images/monte-carlo-visual.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./images/monte-carlo-visual.png"
+                  alt="Monte Carlo impact confidence interval plot"
+                  class="section-graphic"
+                  loading="lazy"
+                  decoding="async"
+                  width="290"
+                  height="290"
+                />
+              </picture>
             </div>
           </div>
         </section>
@@ -230,7 +281,21 @@
               </p>
             </div>
             <div class="media-column reveal-item">
-              <div class="community-graphic"></div>
+              <picture class="community-graphic">
+                <source
+                  srcset="./images/community-visual.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./images/community-visual.png"
+                  alt="RocketPy community network illustration"
+                  class="section-graphic"
+                  loading="lazy"
+                  decoding="async"
+                  width="293"
+                  height="220"
+                />
+              </picture>
             </div>
           </div>
         </section>
