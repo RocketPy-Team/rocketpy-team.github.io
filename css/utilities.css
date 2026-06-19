@@ -1,0 +1,78 @@
+/* ============================================
+   CSS PERFORMANCE OPTIMIZATIONS
+   ============================================
+
+   This file contains optimized versions of commonly
+   repeated CSS patterns for better performance.
+   Use these utility classes to reduce redundancy.
+*/
+
+/* Common gradient text effect */
+.gradient-text {
+  background: linear-gradient(
+    180deg,
+    rgba(180, 181, 205, 1),
+    rgba(205, 205, 205, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Common centered absolute positioning */
+.centered-absolute {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Background image optimization */
+.bg-optimized {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Note: opacity: 1 is the browser default value
+   Removed from codebase for better performance.
+   No class needed - elements are fully opaque by default. */
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+  transition: all 0.2s ease;
+}
+
+/* Performance hints for animations */
+.will-animate {
+  will-change: transform, opacity;
+}
+
+/* Remove will-change after animation */
+.animation-done {
+  will-change: auto;
+}
+
+/* Common border radius */
+.rounded-full {
+  border-radius: 50%;
+}
+
+/* Hidden but accessible for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible for better keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}

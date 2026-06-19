@@ -1,9 +1,27 @@
 {
-  "devDependencies": {
-    "prettier": "^3.3.3"
-  },
+  "name": "rocketpy-landing-page",
+  "version": "1.0.0",
+  "description": "RocketPy landing page - Advanced rocket trajectory simulator",
   "scripts": {
-      "format": "prettier --write '**/*.{html,css,js}'"
-    }
-
+    "format": "prettier --write '**/*.{html,css,js}'",
+    "build": "npm run build:css && npm run build:html",
+    "build:css": "npm run minify:css:main && npm run minify:css:footer && npm run minify:css:about",
+    "build:html": "npm run minify:html:index && npm run minify:html:about",
+    "minify:css:main": "lightningcss --minify --bundle css/main.css -o dist/css/main.min.css",
+    "minify:css:footer": "lightningcss --minify --bundle css/footer.css -o dist/css/footer.min.css",
+    "minify:css:about": "lightningcss --minify --bundle about-css/main.css -o dist/about-css/main.min.css",
+    "minify:html:index": "html-minifier --collapse-whitespace --remove-comments index.html -o dist/index.html",
+    "minify:html:about": "html-minifier --collapse-whitespace --remove-comments about.html -o dist/about.html",
+    "prebuild": "node -e \"const fs = require('fs'); ['dist', 'dist/css', 'dist/about-css', 'dist/images', 'dist/about-images'].forEach(dir => fs.mkdirSync(dir, {recursive: true}));\"",
+    "postbuild": "node -e \"const fs = require('fs'); const copyDir = (src, dest) => { fs.readdirSync(src).forEach(file => { const srcPath = src + '/' + file; const destPath = dest + '/' + file; if (fs.statSync(srcPath).isDirectory()) { fs.mkdirSync(destPath, {recursive: true}); copyDir(srcPath, destPath); } else { fs.copyFileSync(srcPath, destPath); } }); }; copyDir('images', 'dist/images'); copyDir('about-images', 'dist/about-images'); copyDir('css/font-awesome', 'dist/css/font-awesome');\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "lightningcss-cli": "^1.27.0",
+    "html-minifier": "^4.0.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "not dead"
+  ]
 }
