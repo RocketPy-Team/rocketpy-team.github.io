@@ -5,15 +5,14 @@
   "scripts": {
     "format": "prettier --write '**/*.{html,css,js}'",
     "build": "npm run build:css && npm run build:html",
-    "build:css": "npm run minify:css:main && npm run minify:css:footer && npm run minify:css:about",
+    "build:css": "npm run minify:css:main && npm run minify:css:footer",
     "build:html": "npm run minify:html:index && npm run minify:html:about",
-    "minify:css:main": "lightningcss --minify --bundle css/main.css -o dist/css/main.min.css",
-    "minify:css:footer": "lightningcss --minify --bundle css/footer.css -o dist/css/footer.min.css",
-    "minify:css:about": "lightningcss --minify --bundle about-css/main.css -o dist/about-css/main.min.css",
+    "minify:css:main": "lightningcss --minify --bundle css/main.css -o dist/css/main.css",
+    "minify:css:footer": "lightningcss --minify --bundle css/footer.css -o dist/css/footer.css",
     "minify:html:index": "html-minifier --collapse-whitespace --remove-comments index.html -o dist/index.html",
     "minify:html:about": "html-minifier --collapse-whitespace --remove-comments about.html -o dist/about.html",
-    "prebuild": "node -e \"const fs = require('fs'); ['dist', 'dist/css', 'dist/about-css', 'dist/images', 'dist/about-images'].forEach(dir => fs.mkdirSync(dir, {recursive: true}));\"",
-    "postbuild": "node -e \"const fs = require('fs'); const copyDir = (src, dest) => { fs.readdirSync(src).forEach(file => { const srcPath = src + '/' + file; const destPath = dest + '/' + file; if (fs.statSync(srcPath).isDirectory()) { fs.mkdirSync(destPath, {recursive: true}); copyDir(srcPath, destPath); } else { fs.copyFileSync(srcPath, destPath); } }); }; copyDir('images', 'dist/images'); copyDir('about-images', 'dist/about-images'); copyDir('css/font-awesome', 'dist/css/font-awesome');\""
+    "prebuild": "node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true }); ['dist', 'dist/css', 'dist/images', 'dist/about-images'].forEach(dir => fs.mkdirSync(dir, { recursive: true }));\"",
+    "postbuild": "node -e \"const fs = require('fs'); const path = require('path'); const copyDir = (src, dest) => { if (!fs.existsSync(src)) return; fs.mkdirSync(dest, { recursive: true }); for (const entry of fs.readdirSync(src, { withFileTypes: true })) { const srcPath = path.join(src, entry.name); const destPath = path.join(dest, entry.name); if (entry.isDirectory()) copyDir(srcPath, destPath); else fs.copyFileSync(srcPath, destPath); } }; const copyFile = (src, dest) => { if (!fs.existsSync(src)) return; fs.mkdirSync(path.dirname(dest), { recursive: true }); fs.copyFileSync(src, dest); }; copyDir('images', 'dist/images'); copyDir('about-images', 'dist/about-images'); copyDir('css/font-awesome', 'dist/css/font-awesome'); ['manifest.json', 'robots.txt', 'sitemap.xml', 'nasalization-rg.otf'].forEach(file => copyFile(file, path.join('dist', file)));\""
   },
   "devDependencies": {
     "prettier": "^3.3.3",
