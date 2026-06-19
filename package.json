@@ -5,10 +5,11 @@
   "scripts": {
     "format": "prettier --write '**/*.{html,css,js}'",
     "build": "npm run build:css && npm run build:html",
-    "build:css": "npm run minify:css:main && npm run minify:css:footer",
+    "build:css": "npm run minify:css:main && npm run minify:css:footer && npm run minify:css:about",
     "build:html": "npm run minify:html:index && npm run minify:html:about",
     "minify:css:main": "lightningcss --minify --bundle css/main.css -o dist/css/main.css",
     "minify:css:footer": "lightningcss --minify --bundle css/footer.css -o dist/css/footer.css",
+    "minify:css:about": "lightningcss --minify --bundle css/about.css -o dist/css/about.css",
     "minify:html:index": "html-minifier --collapse-whitespace --remove-comments index.html -o dist/index.html",
     "minify:html:about": "html-minifier --collapse-whitespace --remove-comments about.html -o dist/about.html",
     "prebuild": "node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true }); ['dist', 'dist/css', 'dist/images', 'dist/about-images'].forEach(dir => fs.mkdirSync(dir, { recursive: true }));\"",

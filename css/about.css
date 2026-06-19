@@ -1,0 +1,325 @@
+/* ==========================================================================
+   ROCKETPY TEAM PAGE STYLES (about.css)
+   ========================================================================== */
+
+/* Main layout containers */
+.about-hero {
+  text-align: center;
+  padding: clamp(2rem, 5vw, 4rem) 1rem clamp(1.5rem, 4vw, 2.5rem);
+  position: relative;
+}
+
+.about-title {
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Filter Navigation */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1.5rem auto 3rem;
+  padding: 6px;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-family: "Ruda", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 22px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.filter-btn.active {
+  background: linear-gradient(130deg, #f0ab50 0%, #ffd38f 100%);
+  color: #030b28;
+  box-shadow: 0 4px 15px rgba(240, 171, 80, 0.35);
+}
+
+/* Team Grid Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 10px 0;
+  min-height: 350px;
+}
+
+/* Card Styling (Glassmorphism & Glow) */
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: 20px;
+  background: rgba(33, 35, 50, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardFadeIn 0.5s ease forwards;
+}
+
+/* Entry Animation for Card */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.member-card:hover {
+  transform: translateY(-8px);
+  background: rgba(33, 35, 50, 0.65);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Color themed glow rings behind cards on hover based on team */
+.member-card.team-management:hover {
+  box-shadow:
+    0 15px 35px rgba(248, 168, 75, 0.15),
+    0 0 1px 1px rgba(248, 168, 75, 0.25);
+}
+
+.member-card.team-library:hover {
+  box-shadow:
+    0 15px 35px rgba(45, 212, 191, 0.15),
+    0 0 1px 1px rgba(45, 212, 191, 0.25);
+}
+
+.member-card.team-web:hover {
+  box-shadow:
+    0 15px 35px rgba(168, 85, 247, 0.15),
+    0 0 1px 1px rgba(168, 85, 247, 0.25);
+}
+
+.member-card.team-pr:hover {
+  box-shadow:
+    0 15px 35px rgba(59, 130, 246, 0.15),
+    0 0 1px 1px rgba(59, 130, 246, 0.25);
+}
+
+/* Avatar Sphere styles */
+.avatar-container {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 20px;
+}
+
+.avatar-sphere {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow:
+    inset 0 -8px 16px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.member-card:hover .avatar-sphere {
+  transform: scale(1.08) rotate(4deg);
+}
+
+/* Team specific gradients for Avatars */
+.grad-management {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffd38f 0%,
+    #f0ab50 50%,
+    #b45309 100%
+  );
+}
+
+.grad-library {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #99f6e4 0%,
+    #14b8a6 50%,
+    #115e59 100%
+  );
+}
+
+.grad-web {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f3e8ff 0%,
+    #a855f7 50%,
+    #6b21a8 100%
+  );
+}
+
+.grad-pr {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #dbeafe 0%,
+    #3b82f6 50%,
+    #1e3a8a 100%
+  );
+}
+
+/* Avatar border ring glow on hover */
+.avatar-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.member-card.team-management:hover .avatar-ring {
+  opacity: 1;
+  box-shadow: 0 0 12px 2px rgba(248, 168, 75, 0.5);
+  border: 2px solid rgba(248, 168, 75, 0.3);
+}
+
+.member-card.team-library:hover .avatar-ring {
+  opacity: 1;
+  box-shadow: 0 0 12px 2px rgba(45, 212, 191, 0.5);
+  border: 2px solid rgba(45, 212, 191, 0.3);
+}
+
+.member-card.team-web:hover .avatar-ring {
+  opacity: 1;
+  box-shadow: 0 0 12px 2px rgba(168, 85, 247, 0.5);
+  border: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.member-card.team-pr:hover .avatar-ring {
+  opacity: 1;
+  box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.5);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Info styling */
+.member-name {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.member-role {
+  font-family: "Ruda", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+/* Team specific role colors */
+.role-management {
+  color: #f8a84b;
+}
+
+.role-library {
+  color: #2dd4bf;
+}
+
+.role-web {
+  color: #c084fc;
+}
+
+.role-pr {
+  color: #60a5fa;
+}
+
+.member-contrib {
+  font-family: "Ruda", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Social links inside card */
+.member-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.member-social-link {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 18px;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.member-social-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustment for top-bar in About page */
+@media (max-width: 600px) {
+  .filter-container {
+    border-radius: 16px;
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .filter-btn {
+    flex: 1 1 40%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+}
