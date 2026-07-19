@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RocketPy Team - About</title>
+    <title>RocketPy Team - About Us</title>
     <meta
       name="description"
-      content="The RocketPy Team about page is temporarily unavailable while we prepare updated team information."
+      content="The story and the people behind RocketPy - the open-source community of aerospace engineers, students and developers who built the world's leading rocket trajectory simulator."
     />
-    <meta property="og:title" content="RocketPy Team - About" />
+    <meta property="og:title" content="RocketPy Team - About Us" />
     <meta
       property="og:description"
-      content="The RocketPy Team about page is temporarily unavailable while we prepare updated team information."
+      content="The story and the people behind the RocketPy rocket trajectory simulator."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rocketpy.org/about.html" />
@@ -22,10 +22,10 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RocketPy Team - About" />
+    <meta name="twitter:title" content="RocketPy Team - About Us" />
     <meta
       name="twitter:description"
-      content="The RocketPy Team about page is temporarily unavailable while we prepare updated team information."
+      content="The story and the people behind the RocketPy rocket trajectory simulator."
     />
     <meta
       name="twitter:image"
@@ -33,38 +33,1028 @@
     />
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#030B28" />
-    <meta http-equiv="refresh" content="0; url=https://rocketpy.org/" />
-    <link rel="canonical" href="https://rocketpy.org/" />
-    <style>
-      :root {
-        color-scheme: dark;
-      }
+    <meta name="theme-color" content="#030b28" />
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: Arial, sans-serif;
-        background: #030b28;
-        color: #ffffff;
-        text-align: center;
-        padding: 1.5rem;
-      }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://docs.rocketpy.org" />
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;700&family=Rubik:wght@400;500;700&family=Open+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-      a {
-        color: #69b4ff;
-      }
-    </style>
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/about.css" rel="stylesheet" />
+    <link href="./css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="./css/font-awesome/css/solid.min.css" rel="stylesheet" />
+    <link href="./css/font-awesome/css/brands.min.css" rel="stylesheet" />
   </head>
+
   <body>
-    <main>
-      <h1>Redirecting to RocketPy homepage...</h1>
-      <p>
-        The About page is being rebuilt. If you are not redirected, continue to
-        <a href="https://rocketpy.org/">rocketpy.org</a>.
-      </p>
-    </main>
+    <div class="page-wrapper">
+      <header class="top-bar">
+        <div class="brand-and-cta">
+          <a class="brand-link" href="./index.html" aria-label="RocketPy home">
+            <span class="brand-logo"></span>
+          </a>
+        </div>
+        <nav class="social-nav panel-bg" aria-label="Main navigation">
+          <a href="./about.html" class="icon-button" aria-label="About us"
+            ><i class="fa-solid fa-users"></i
+          ></a>
+          <a
+            href="https://docs.rocketpy.org/en/latest/index.html"
+            class="icon-button"
+            aria-label="Documentation"
+            ><i class="fa-solid fa-book"></i
+          ></a>
+          <a
+            href="https://github.com/RocketPy-Team/RocketPy"
+            class="icon-button"
+            aria-label="GitHub repository"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/rocketpyteam"
+            class="icon-button"
+            aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/rocketpy"
+            class="icon-button"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <!-- ============================ HERO ============================ -->
+        <section class="about-hero panel-bg">
+          <p class="about-eyebrow">Since 2018 &middot; Open Source</p>
+          <h1 class="about-title">The People Behind RocketPy</h1>
+          <p class="about-subtitle">
+            RocketPy was born inside a student rocketry team and grew into the
+            world's leading open-source rocket trajectory simulator. This page
+            is a permanent tribute to everyone who has helped build it &mdash;
+            the founders who started it and the global community of contributors
+            who keep it flying.
+          </p>
+
+          <div class="stat-row" id="statRow">
+            <div class="stat-item">
+              <span class="stat-num" id="statPeople">&mdash;</span>
+              <span class="stat-label">Contributors</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">2018</span>
+              <span class="stat-label">First commit</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">6-DOF</span>
+              <span class="stat-label">Flight simulation</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">v1.11+</span>
+              <span class="stat-label">Released &amp; active</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================ STORY ============================ -->
+        <section class="about-section" id="story">
+          <h2 class="section-title">Our Story</h2>
+          <p class="section-lede">
+            More than six years of open development, condensed into a few
+            milestones.
+          </p>
+
+          <div class="story-prose">
+            <p>
+              RocketPy started as an internal tool at
+              <a
+                href="https://github.com/Projeto-Jupiter"
+                target="_blank"
+                rel="noopener"
+                >Projeto Jupiter</a
+              >, the student rocket design team at the University of São Paulo
+              (USP), created by <strong>Giovani Ceotto</strong> to simulate the
+              flight of the team's rockets with high fidelity. What began as a
+              way to answer &ldquo;how high will it fly?&rdquo; became a full
+              six-degrees-of-freedom trajectory simulator.
+            </p>
+            <p>
+              In 2021, the project was formalized in a peer-reviewed paper in
+              the <em>Journal of Aerospace Engineering</em>, and RocketPy
+              stepped out of a single team and into the global rocketry
+              community. Its results have been validated against real flight
+              data from teams such as the EPFL Rocket Team and the Notre Dame
+              Rocket Team.
+            </p>
+            <p>
+              Since then, dozens of students, engineers and open-source
+              contributors from around the world have shaped RocketPy &mdash;
+              through the milestone <strong>1.0</strong> release in 2023 and a
+              steady cadence of versions ever since. Everyone listed below is
+              part of that history, marked here for good.
+            </p>
+          </div>
+
+          <ol class="timeline" aria-label="RocketPy milestones">
+            <li class="tl-item">
+              <span class="tl-year">2018</span>
+              <div class="tl-body">
+                <h3>Moved to GitHub</h3>
+                <p>
+                  Giovani Ceotto brings the simulator into version control at
+                  Projeto Jupiter &mdash; the first public commit.
+                </p>
+              </div>
+            </li>
+            <li class="tl-item">
+              <span class="tl-year">2020</span>
+              <div class="tl-body">
+                <h3>First public release</h3>
+                <p>
+                  RocketPy is packaged and released to the community (v0.9.5),
+                  open for anyone to install and use.
+                </p>
+              </div>
+            </li>
+            <li class="tl-item">
+              <span class="tl-year">2021</span>
+              <div class="tl-body">
+                <h3>Published research</h3>
+                <p>
+                  &ldquo;RocketPy: Six Degree-of-Freedom Rocket Trajectory
+                  Simulator&rdquo; is published in the Journal of Aerospace
+                  Engineering.
+                </p>
+              </div>
+            </li>
+            <li class="tl-item">
+              <span class="tl-year">2023</span>
+              <div class="tl-body">
+                <h3>Version 1.0</h3>
+                <p>
+                  A matured, stable API and a fast-growing worldwide community
+                  of contributors.
+                </p>
+              </div>
+            </li>
+            <li class="tl-item">
+              <span class="tl-year">Today</span>
+              <div class="tl-body">
+                <h3>Still climbing</h3>
+                <p>
+                  Actively developed and maintained, powering student teams,
+                  researchers and companies across the globe.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ========================= FOUNDERS ========================= -->
+        <section class="about-section" id="founders">
+          <h2 class="section-title">Founders &amp; Origins</h2>
+          <p class="section-lede">
+            The people who created RocketPy and set it on its path.
+          </p>
+          <div class="featured-grid" id="foundersGrid">
+            <!-- populated by JS -->
+          </div>
+        </section>
+
+        <!-- ======================= CORE TEAM ======================= -->
+        <section class="about-section" id="core-team">
+          <h2 class="section-title">Core Team</h2>
+          <p class="section-lede">
+            The people who led the squads and stewarded RocketPy over the years
+            &mdash; from the library, tests and APIs to the front-end,
+            competitions and community around the world.
+          </p>
+          <div class="featured-grid" id="coreGrid">
+            <!-- populated by JS -->
+          </div>
+        </section>
+
+        <!-- ====================== GLOBAL / INSTITUTIONS ====================== -->
+        <section class="about-section" id="global">
+          <h2 class="section-title">A Global Project</h2>
+          <p class="section-lede">
+            RocketPy grew far beyond its home team. Its contributors have
+            written code from universities and institutions across the world.
+          </p>
+          <div class="inst-countries">
+            <span class="inst-country-stat"><strong>7+</strong> countries</span>
+            <span class="inst-dot">&middot;</span>
+            <span class="inst-country-stat"><strong>3</strong> continents</span>
+            <span class="inst-dot">&middot;</span>
+            <span class="inst-country-stat">one open-source community</span>
+          </div>
+          <ul class="inst-grid">
+            <li class="inst-card">
+              <span class="inst-name">University of São Paulo</span>
+              <span class="inst-place"
+                >Brazil &middot; home of Projeto Jupiter</span
+              >
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">Instituto Superior Técnico</span>
+              <span class="inst-place"
+                >University of Lisbon &middot; Portugal</span
+              >
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">UC Berkeley</span>
+              <span class="inst-place">United States</span>
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">Georgia Tech</span>
+              <span class="inst-place">United States</span>
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">Colorado School of Mines</span>
+              <span class="inst-place">United States</span>
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">IMT Atlantique</span>
+              <span class="inst-place">France</span>
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">University of the Basque Country</span>
+              <span class="inst-place">Spain</span>
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">National Tsing Hua University</span>
+              <span class="inst-place">Taiwan</span>
+            </li>
+            <li class="inst-card">
+              <span class="inst-name">Victoria University of Wellington</span>
+              <span class="inst-place">New Zealand</span>
+            </li>
+          </ul>
+          <p class="contrib-note">
+            Institutions identified from the e-mail domains in RocketPy's public
+            commit history &mdash; a partial, ever-growing snapshot of a truly
+            global community.
+          </p>
+        </section>
+
+        <!-- ======================= CONTRIBUTORS ======================= -->
+        <section class="about-section" id="contributors">
+          <h2 class="section-title">Hall of Contributors</h2>
+          <p class="section-lede">
+            Every hand that has shaped RocketPy, drawn from the project's full
+            commit history. Thank you, all of you.
+          </p>
+          <div class="contrib-grid" id="contribGrid">
+            <!-- populated by JS -->
+          </div>
+          <p class="contrib-note">
+            This list is generated from RocketPy's public Git history. Missing
+            or want to fix your name?
+            <a
+              href="https://github.com/RocketPy-Team/RocketPy"
+              target="_blank"
+              rel="noopener"
+              >Open a PR</a
+            >
+            &mdash; contributions of every size are counted here forever.
+          </p>
+        </section>
+
+        <!-- ==================== INSTITUTIONAL / CTA ==================== -->
+        <section class="about-section about-cta panel-bg" id="join">
+          <h2 class="section-title">Built by a community</h2>
+          <p class="section-lede">
+            RocketPy is free and open source, born at
+            <a
+              href="https://github.com/Projeto-Jupiter"
+              target="_blank"
+              rel="noopener"
+              >Projeto Jupiter</a
+            >
+            (USP) and sustained by contributors worldwide. There is a place for
+            you in the next chapter of this story.
+          </p>
+          <div class="cta-buttons">
+            <a
+              class="cta-btn cta-primary"
+              href="https://github.com/RocketPy-Team/RocketPy"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-github"></i> Contribute on GitHub</a
+            >
+            <a
+              class="cta-btn cta-secondary"
+              href="https://discord.gg/b6xYnNh"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-discord"></i> Join our Discord</a
+            >
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer-distributed" id="footer">
+      <div class="footer-left">
+        <div class="footer-logo"></div>
+        <p class="footer-company-name">RocketPy Team &copy; 2026</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker icon-max-width"></i>
+          <p>
+            <a href="https://maps.app.goo.gl/qFAGgBq1LqceRkjj6" target="_blank"
+              >São Paulo, Brazil</a
+            >
+          </p>
+        </div>
+        <div>
+          <i class="fa-brands fa-discord icon-max-width"></i>
+          <p>
+            <a href="https://discord.com/invite/b6xYnNh">
+              Join us on discord!
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About us</span>
+          RocketPy Team is responsible for maintaining and developing the
+          RocketPy project, an open-source rocket trajectory simulator.
+        </p>
+
+        <div class="footer-icons">
+          <a href="https://www.instagram.com/rocketpyteam"
+            ><i class="fa-brands fa-instagram"></i></a
+          ><a href="https://www.linkedin.com/company/rocketpy"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/RocketPy-Team/RocketPy"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="https://www.youtube.com/@rocketpyteam5828"
+            ><i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const TEAM = {
+        featured: [
+          {
+            tier: "founder",
+            role: "Creator",
+            bio: "Started RocketPy at Projeto Jupiter and designed its 6-DOF simulation core. Lead author of the founding paper in the Journal of Aerospace Engineering.",
+            linkedin: "",
+            commits: 646,
+            name: "Giovani Hidalgo Ceotto",
+            handle: "giovaniceotto",
+            avatar: "https://github.com/giovaniceotto.png?size=160",
+          },
+          {
+            tier: "founder",
+            role: "Founding Contributor",
+            bio: "One of the very first contributors to RocketPy and co-author of the founding paper.",
+            linkedin: "",
+            commits: 3,
+            name: "Rodrigo Schmitt",
+            handle: "rodrigo-schmitt",
+            avatar: "https://github.com/rodrigo-schmitt.png?size=160",
+          },
+          {
+            tier: "founder",
+            role: "Maintainer &amp; Coordinator",
+            bio: "Joined to lead the project's expansion and long-term sustainability. Co-author of the founding paper and the project's most active contributor.",
+            linkedin: "",
+            commits: 1722,
+            name: "Guilherme Fernandes Alves",
+            handle: "Gui-FernandesBR",
+            avatar: "https://github.com/Gui-FernandesBR.png?size=160",
+          },
+          {
+            tier: "founder",
+            role: "Founding Contributor",
+            bio: "Joined early to help expand RocketPy and ensure its sustainability. Co-author of the founding paper.",
+            linkedin: "",
+            commits: 72,
+            name: "Lucas Azevedo Pezente",
+            handle: "lucasfourier",
+            avatar: "https://github.com/lucasfourier.png?size=160",
+          },
+          {
+            tier: "founder",
+            role: "Academic Advisor",
+            bio: "Professor at the University of São Paulo (USP) and academic advisor; co-author of the founding paper.",
+            linkedin: "",
+            commits: 0,
+            name: "Bruno S. Carmo",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "core",
+            role: "Core Maintainer &middot; Library",
+            bio: "Generation zero &mdash; with the project almost since the very beginning, and one of its most active contributors across the library's core, tests and simulation modules.",
+            linkedin: "mateus-stano-junqueira-41462119a",
+            commits: 1251,
+            name: "Mateus Stano Junqueira",
+            handle: "MateusStano",
+            avatar: "https://github.com/MateusStano.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Core Maintainer &middot; Library",
+            bio: "Joined in 2022 and has been a driving force ever since, stewarding the library's architecture, numerics and code quality.",
+            linkedin: "pedro-bressan-03681124a",
+            commits: 463,
+            name: "Pedro Henrique Marinho Bressan",
+            handle: "phmbressan",
+            avatar: "https://github.com/phmbressan.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "General Management Lead &middot; Generation Zero",
+            bio: "Generation zero and an ever-present partner. He spent two years supporting the coordination and then led the general management team for two more, helping with nearly everything along the way.",
+            linkedin: "adriano-augusto-antongiovanni",
+            commits: 8,
+            name: "Adriano Augusto Antongiovanni",
+            handle: "adrianoantongiovanni",
+            avatar: "https://github.com/adrianoantongiovanni.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "EuRoC 2022 &middot; Creator of RocketSerializer",
+            bio: "Went to RocketPy's first EuRoC in 2022 and created RocketSerializer. A seasoned programmer whose experience helped the team enormously.",
+            linkedin: "patricksampaioperfil",
+            commits: 81,
+            name: "Patrick Sampaio",
+            handle: "PatrickSampaioUSP",
+            avatar: "https://github.com/PatrickSampaioUSP.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Creator of the Infinity API",
+            bio: "Joined in 2023 and built the Infinity API &mdash; RocketPy's REST API &mdash; almost single-handedly. Also strengthened the library by documenting and optimizing its test suite.",
+            linkedin: "gabriel-barberini-728778b9",
+            commits: 18,
+            name: "Gabriel Barberini",
+            handle: "GabrielBarberini",
+            avatar: "https://github.com/GabrielBarberini.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Library Developer",
+            bio: "Joined the team in 2024, bringing valuable additions to the core library.",
+            linkedin: "lucas-de-oliveira-prates-ab3ab7192",
+            commits: 79,
+            name: "Lucas de Oliveira Prates",
+            handle: "Lucas-Prates",
+            avatar: "https://github.com/Lucas-Prates.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "LASC 2025 &middot; Aerospace Engineer",
+            bio: "Contributed to RocketSerializer and brought new motor ideas, and took RocketPy to LASC in 2025 with a group of teammates. The team's aerospace engineer.",
+            linkedin: "juliomachad0",
+            commits: 12,
+            name: "Julio Machado",
+            handle: "juliomachad0",
+            avatar: "https://github.com/juliomachad0.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Front-End Lead &middot; Generation Zero",
+            bio: "Generation zero. The first front-end manager after Rodrigo, he stayed with the team for years and was a constant source of support.",
+            linkedin: "luizmota1999",
+            commits: 0,
+            name: "Luiz Mota",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "core",
+            role: "Front-End Lead",
+            bio: "Took on the challenge of building RocketPy's graphical interface. Joined through our hackathon and went on to lead the front-end (web development) squad.",
+            linkedin: "aasitvora",
+            commits: 0,
+            name: "Aasit Vora",
+            handle: "aasitvora99",
+            avatar: "https://github.com/aasitvora99.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Outreach &middot; Generation Zero",
+            bio: "Part of RocketPy's generation zero, coming from Projeto Jupiter. Drove outreach in the project's first year and supported the front-end team with early ideas.",
+            linkedin: "brenolr",
+            commits: 0,
+            name: "Breno Rocha",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "core",
+            role: "Public Relations &amp; Outreach",
+            bio: "Was there for RocketPy's very first presentation at Python Brasil, and did great work on the public relations and outreach team.",
+            linkedin: "rafael-kneip",
+            commits: 0,
+            name: "Rafael Kneip",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "core",
+            role: "Social Media &amp; Brand",
+            bio: "Joined in late 2023 and launched RocketPy's Instagram, supercharging our selection processes and spreading RocketPy's image around the world.",
+            linkedin: "samuelnascimentodemelosantos",
+            commits: 0,
+            name: "Samuel Nascimento",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "core",
+            role: "EuRoC 2023 &middot; Operations",
+            bio: "Took RocketPy to EuRoC in 2023 and helped structure the competition's operations &mdash; a powerhouse of the team.",
+            linkedin: "brunosorban",
+            commits: 15,
+            name: "Bruno Sorban",
+            handle: "brunosorban",
+            avatar: "https://github.com/brunosorban.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "RocketPy Europe Lead",
+            bio: "Joined in 2024 and became RocketPy's representative in Europe, leading the team at EuRoC for two consecutive years.",
+            linkedin: "lucasvigon",
+            commits: 13,
+            name: "Lucas Gonçalves",
+            handle: "LUCKIN13",
+            avatar: "https://github.com/LUCKIN13.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Hackathon 2023 Winner",
+            bio: "Winner of our 2023 hackathon; she went on to represent RocketPy at EuRoC 2024 and LASC 2025.",
+            linkedin: "lauradoprado",
+            commits: 0,
+            name: "Laura do Prado",
+            handle: "",
+            avatar: "",
+          },
+        ],
+        gallery: [
+          {
+            name: "Franz Masatoshi Yuri",
+            handle: "FranzYuri",
+            avatar: "https://github.com/FranzYuri.png?size=160",
+            commits: 91,
+          },
+          {
+            name: "Arthur Wang",
+            handle: "ArthurJWH",
+            avatar: "https://github.com/ArthurJWH.png?size=160",
+            commits: 54,
+          },
+          {
+            name: "Gautam Sai",
+            handle: "gautamsaiy",
+            avatar: "https://github.com/gautamsaiy.png?size=160",
+            commits: 26,
+          },
+          {
+            name: "Oscar M. Prada",
+            handle: "ompro07",
+            avatar: "https://github.com/ompro07.png?size=160",
+            commits: 23,
+          },
+          {
+            name: "Leonardo Rosa",
+            handle: "leogrosa",
+            avatar: "https://github.com/leogrosa.png?size=160",
+            commits: 18,
+          },
+          {
+            name: "João Gribel",
+            handle: "MrGribel",
+            avatar: "https://github.com/MrGribel.png?size=160",
+            commits: 18,
+          },
+          {
+            name: "Ishan Dubey",
+            handle: "aZira371",
+            avatar: "https://github.com/aZira371.png?size=160",
+            commits: 16,
+          },
+          {
+            name: "Sofia Suesdek",
+            handle: "Sofia-ME",
+            avatar: "https://github.com/Sofia-ME.png?size=160",
+            commits: 15,
+          },
+          {
+            name: "Lucas Kierulff Balabram",
+            handle: "Lucas-KB",
+            avatar: "https://github.com/Lucas-KB.png?size=160",
+            commits: 15,
+          },
+          {
+            name: "Mohammed S. Al-Mahrouqi",
+            handle: "Malmahrouqi3",
+            avatar: "https://github.com/Malmahrouqi3.png?size=160",
+            commits: 15,
+          },
+          {
+            name: "Curtis Hu",
+            handle: "curtisjhu",
+            avatar: "https://github.com/curtisjhu.png?size=160",
+            commits: 12,
+          },
+          {
+            name: "Kamel Lounis",
+            handle: "kalounis",
+            avatar: "https://github.com/kalounis.png?size=160",
+            commits: 10,
+          },
+          {
+            name: "Patrick Bales",
+            handle: "",
+            avatar: "",
+            commits: 8,
+          },
+          {
+            name: "William Armstrong",
+            handle: "",
+            avatar: "",
+            commits: 6,
+          },
+          {
+            name: "Diego Grünberger",
+            handle: "thediego21",
+            avatar: "https://github.com/thediego21.png?size=160",
+            commits: 6,
+          },
+          {
+            name: "Kevin Alcañiz",
+            handle: "",
+            avatar: "",
+            commits: 5,
+          },
+          {
+            name: "Robert",
+            handle: "",
+            avatar: "",
+            commits: 5,
+          },
+          {
+            name: "Bruno Sorban",
+            handle: "",
+            avatar: "",
+            commits: 4,
+          },
+          {
+            name: "Montadhar Ettaieb",
+            handle: "Monta120",
+            avatar: "https://github.com/Monta120.png?size=160",
+            commits: 4,
+          },
+          {
+            name: "Calebe Teles",
+            handle: "CabGT",
+            avatar: "https://github.com/CabGT.png?size=160",
+            commits: 4,
+          },
+          {
+            name: "Andre Geldenhuis",
+            handle: "",
+            avatar: "",
+            commits: 3,
+          },
+          {
+            name: "Kaleb Ramos W Santos",
+            handle: "",
+            avatar: "",
+            commits: 3,
+          },
+          {
+            name: "Matanski",
+            handle: "Matanski",
+            avatar: "https://github.com/Matanski.png?size=160",
+            commits: 3,
+          },
+          {
+            name: "ZuoRen Chen",
+            handle: "zuorenchen",
+            avatar: "https://github.com/zuorenchen.png?size=160",
+            commits: 3,
+          },
+          {
+            name: "Andre Geldenhuis",
+            handle: "andre-geldenhuis",
+            avatar: "https://github.com/andre-geldenhuis.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "Bizo883",
+            handle: "",
+            avatar: "",
+            commits: 2,
+          },
+          {
+            name: "Caio Souza",
+            handle: "caioessouza",
+            avatar: "https://github.com/caioessouza.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "Khushal Kottaru",
+            handle: "",
+            avatar: "",
+            commits: 2,
+          },
+          {
+            name: "Marchma0",
+            handle: "marchma0",
+            avatar: "https://github.com/marchma0.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "Vinicius Carvalho Monnerat Bandeira",
+            handle: "viniciuscmb",
+            avatar: "https://github.com/viniciuscmb.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "Yuri de Castro",
+            handle: "yuricastrodev",
+            avatar: "https://github.com/yuricastrodev.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "clementm",
+            handle: "clementm",
+            avatar: "https://github.com/clementm.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "dipesh2212",
+            handle: "",
+            avatar: "",
+            commits: 2,
+          },
+          {
+            name: "matheus-doretto",
+            handle: "matheus-doretto",
+            avatar: "https://github.com/matheus-doretto.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "Niklas Freund",
+            handle: "nalquas",
+            avatar: "https://github.com/nalquas.png?size=160",
+            commits: 2,
+          },
+          {
+            name: "Advait Chandorkar",
+            handle: "advaitchandorkar07",
+            avatar: "https://github.com/advaitchandorkar07.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "AsierLehu",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "Cameron Brooks",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "Eriel Cabrera",
+            handle: "erielc",
+            avatar: "https://github.com/erielc.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "EvanM",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "Guilherme Lazzarini",
+            handle: "guilhermeasura",
+            avatar: "https://github.com/guilhermeasura.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Justin Smart",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "KrWanderley",
+            handle: "krwanderley",
+            avatar: "https://github.com/krwanderley.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Leonard",
+            handle: "l30-stack",
+            avatar: "https://github.com/l30-stack.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Morgan Thomas",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "RahulKrishna",
+            handle: "rahulkrishna145",
+            avatar: "https://github.com/rahulkrishna145.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Richik Sinha",
+            handle: "rickisterr",
+            avatar: "https://github.com/rickisterr.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Styris",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "Tiberiu Sabău",
+            handle: "tibisabau",
+            avatar: "https://github.com/tibisabau.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Xiaoyu TANG",
+            handle: "c8h10o2",
+            avatar: "https://github.com/c8h10o2.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "Yogiraj Gutte",
+            handle: "yogirajgutte",
+            avatar: "https://github.com/yogirajgutte.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "alessio26gas",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "ayoubdsp",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "cazzopardi",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "chasgior214",
+            handle: "chasgior214",
+            avatar: "https://github.com/chasgior214.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "dyu056",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "hogatata",
+            handle: "hogatata",
+            avatar: "https://github.com/hogatata.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "styris00",
+            handle: "styris00",
+            avatar: "https://github.com/styris00.png?size=160",
+            commits: 1,
+          },
+          {
+            name: "tbhakhri",
+            handle: "",
+            avatar: "",
+            commits: 1,
+          },
+          {
+            name: "秀吉",
+            handle: "thc1006",
+            avatar: "https://github.com/thc1006.png?size=160",
+            commits: 1,
+          },
+        ],
+      };
+
+      function initials(name) {
+        return name
+          .split(/\s+/)
+          .filter(Boolean)
+          .map((n) => n[0])
+          .slice(0, 2)
+          .join("")
+          .toUpperCase();
+      }
+
+      function avatarMarkup(person, cls) {
+        if (person.avatar) {
+          return `<img class="${cls}" src="${person.avatar}" alt="${person.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'${cls} avatar-fallback',textContent:'${initials(person.name)}'}))" />`;
+        }
+        return `<div class="${cls} avatar-fallback">${initials(person.name)}</div>`;
+      }
+
+      function socialLinks(person) {
+        let html = "";
+        if (person.handle) {
+          html += `<a class="gh-link" href="https://github.com/${person.handle}" target="_blank" rel="noopener noreferrer" aria-label="${person.name} on GitHub"><i class="fa-brands fa-github"></i></a>`;
+        }
+        if (person.linkedin) {
+          html += `<a class="gh-link" href="https://www.linkedin.com/in/${person.linkedin}/" target="_blank" rel="noopener noreferrer" aria-label="${person.name} on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>`;
+        }
+        return html;
+      }
+
+      function renderFeatured(gridId, tier) {
+        const grid = document.getElementById(gridId);
+        if (!grid) return;
+        TEAM.featured
+          .filter((p) => p.tier === tier)
+          .forEach((p) => {
+            const card = document.createElement("div");
+            card.className = `featured-card tier-${tier}`;
+            card.innerHTML = `
+              <div class="featured-avatar-wrap">${avatarMarkup(p, "featured-avatar")}</div>
+              <h3 class="featured-name">${p.name}</h3>
+              <div class="featured-role">${p.role}</div>
+              <p class="featured-bio">${p.bio}</p>
+              <div class="featured-socials">${socialLinks(p)}</div>
+            `;
+            grid.appendChild(card);
+          });
+      }
+
+      function renderContributors() {
+        const grid = document.getElementById("contribGrid");
+        if (!grid) return;
+        TEAM.gallery.forEach((p) => {
+          const cell = document.createElement(p.handle ? "a" : "div");
+          cell.className = "contrib-cell";
+          if (p.handle) {
+            cell.href = `https://github.com/${p.handle}`;
+            cell.target = "_blank";
+            cell.rel = "noopener noreferrer";
+          }
+          cell.title = `${p.name}${p.commits ? " — " + p.commits + " commits" : ""}`;
+          cell.innerHTML = `
+            ${avatarMarkup(p, "contrib-avatar")}
+            <span class="contrib-name">${p.name}</span>
+          `;
+          grid.appendChild(cell);
+        });
+      }
+
+      function renderStats() {
+        const people = TEAM.featured.length + TEAM.gallery.length;
+        const el = document.getElementById("statPeople");
+        if (el) el.textContent = people + "+";
+      }
+
+      renderFeatured("foundersGrid", "founder");
+      renderFeatured("coreGrid", "core");
+      renderContributors();
+      renderStats();
+    </script>
   </body>
 </html>
