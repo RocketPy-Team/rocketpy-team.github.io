@@ -25,7 +25,7 @@ This is a **static marketing website** for RocketPy (rocketpy.org) - an open-sou
 
 ### Image Assets
 - Background images are referenced in CSS using optimized assets (e.g., `url("../images/hero-background.png")`)
-- Section illustrations use descriptive filenames (e.g., `hero-logo-illustration.png`, `community-visual.png`)
+- Section illustrations are scalable SVGs with descriptive filenames (e.g., `hero-trajectory.svg`, `community-network.svg`)
 - Favicon and logo files are in `images/` directory
 
 ## Development Workflow
@@ -35,6 +35,15 @@ This is a **static marketing website** for RocketPy (rocketpy.org) - an open-sou
 npm run format  # Runs Prettier on all HTML, CSS, JS files
 ```
 Only dev dependency is Prettier (v3.3.3). Always format before committing.
+
+### Local Preview
+```bash
+make start    # serve the source files at http://127.0.0.1:8000 (override with PORT=)
+make status   # check whether the dev server is running
+make stop     # stop the dev server
+make build    # build the minified site into dist/
+```
+The `make` targets wrap `scripts/devserver.py`, a cross-platform (Windows/macOS/Linux) manager for a detached `python -m http.server`. Run `make help` to list all targets.
 
 ### Deployment
 - **Automatic deployment** via GitHub Actions (`.github/workflows/static.yml`)

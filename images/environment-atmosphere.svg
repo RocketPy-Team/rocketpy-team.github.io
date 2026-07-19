@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Atmospheric layers and weather data above a planet horizon">
+  <defs>
+    <linearGradient id="ea-surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#115e59"/>
+    </linearGradient>
+    <linearGradient id="ea-wind" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#99f6e4" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#99f6e4"/>
+      <stop offset="1" stop-color="#99f6e4" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ea-glow" cx="0.5" cy="1" r="0.8">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- atmospheric glow -->
+  <ellipse cx="200" cy="300" rx="230" ry="150" fill="url(#ea-glow)"/>
+
+  <!-- atmospheric layers -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M0 218 A396 396 0 0 1 400 218" stroke="#60a5fa" stroke-opacity="0.35" stroke-width="2"/>
+    <path d="M0 244 A374 374 0 0 1 400 244" stroke="#5eead4" stroke-opacity="0.4" stroke-width="2"/>
+    <path d="M0 270 A352 352 0 0 1 400 270" stroke="#99f6e4" stroke-opacity="0.5" stroke-width="2"/>
+  </g>
+
+  <!-- planet surface -->
+  <path d="M0 297 A330 330 0 0 1 400 297 L400 320 L0 320 Z" fill="url(#ea-surface)"/>
+  <path d="M0 297 A330 330 0 0 1 400 297" fill="none" stroke="#ccfbf1" stroke-opacity="0.6" stroke-width="2"/>
+
+  <!-- wind streamlines -->
+  <g stroke="url(#ea-wind)" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M40 120 q60 -14 120 0 t120 0" stroke-dasharray="1 10"/>
+    <path d="M60 150 q60 -14 120 0 t120 0" stroke-dasharray="1 10" opacity="0.7"/>
+  </g>
+
+  <!-- sounding data profile -->
+  <line x1="96" y1="120" x2="96" y2="262" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <path d="M96 250 L120 220 L84 190 L128 160 L100 132" fill="none" stroke="#f0ab50" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffd38f">
+    <circle cx="96" cy="250" r="3.4"/>
+    <circle cx="120" cy="220" r="3.4"/>
+    <circle cx="84" cy="190" r="3.4"/>
+    <circle cx="128" cy="160" r="3.4"/>
+    <circle cx="100" cy="132" r="3.4"/>
+  </g>
+
+  <!-- weather balloon -->
+  <g>
+    <path d="M300 108 C288 108 282 98 288 88 C293 80 307 80 312 88 C318 98 312 108 300 108 Z" fill="#5eead4"/>
+    <path d="M300 108 L296 116 L304 116 Z" fill="#14b8a6"/>
+    <line x1="300" y1="116" x2="300" y2="136" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.4"/>
+    <rect x="294" y="136" width="12" height="9" rx="2" fill="#f0ab50"/>
+  </g>
+
+  <!-- stars -->
+  <g fill="#ffffff">
+    <circle cx="46" cy="70" r="1.4" opacity="0.6"/>
+    <circle cx="356" cy="60" r="1.4" opacity="0.6"/>
+    <circle cx="210" cy="40" r="1.2" opacity="0.5"/>
+  </g>
+</svg>

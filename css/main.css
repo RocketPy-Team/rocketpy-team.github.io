@@ -273,36 +273,29 @@ body::before {
   color: var(--accent-strong);
 }
 
-.hero-logo-graphic,
+.hero-graphic,
 .environment-graphic,
-.predictions-graphic {
+.predictions-graphic,
+.community-graphic {
   display: block;
   margin: 0 auto;
-  max-width: 330px;
   width: 100%;
 }
 
-.hero-plot-graphic,
+.hero-graphic {
+  max-width: 440px;
+}
+
+.environment-graphic,
+.predictions-graphic,
 .community-graphic {
-  display: block;
+  max-width: 340px;
 }
 
 .section-graphic {
   display: block;
   height: auto;
   object-fit: contain;
-  width: 100%;
-}
-
-.hero-plot-graphic {
-  height: 190px;
-  margin-top: var(--space-content);
-  max-width: 320px;
-  width: 100%;
-}
-
-.community-graphic {
-  max-width: 360px;
   width: 100%;
 }
 
@@ -384,7 +377,7 @@ body::before {
 
   .split-layout {
     grid-template-columns: 1fr;
-    row-gap: 16px;
+    row-gap: clamp(1.25rem, 5vw, 2rem);
   }
 
   .section-title,
@@ -399,9 +392,16 @@ body::before {
     margin-right: auto;
   }
 
-  .hero-plot-graphic {
-    margin-left: auto;
-    margin-right: auto;
+  /* On stacked layouts the illustration reads as the section's supporting
+     visual, so keep it modest and let the text lead. */
+  .hero-graphic {
+    max-width: 380px;
+  }
+
+  .environment-graphic,
+  .predictions-graphic,
+  .community-graphic {
+    max-width: 300px;
   }
 }
 
@@ -422,5 +422,15 @@ body::before {
   .hero-section,
   .content-section {
     padding: 20px;
+  }
+
+  .hero-graphic {
+    max-width: 300px;
+  }
+
+  .environment-graphic,
+  .predictions-graphic,
+  .community-graphic {
+    max-width: 250px;
   }
 }
