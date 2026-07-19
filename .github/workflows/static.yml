@@ -9,6 +9,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Monthly redeploy (1st of each month, 06:00 UTC) so the live stats injected
+  # at build time (GitHub stars/forks/contributors, PyPI downloads) stay fresh
+  # without needing a push. Scheduled runs always execute on the default branch.
+  schedule:
+    - cron: "0 6 1 * *"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -40,6 +46,11 @@ jobs:
         run: npm ci
       - name: Build site
         run: npm run build
+      - name: Refresh live stats
+        run: npm run stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
       - name: Add .nojekyll
         run: touch dist/.nojekyll
       - name: Setup Pages
