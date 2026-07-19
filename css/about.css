@@ -467,6 +467,69 @@ a.contrib-cell:hover .contrib-name {
   line-height: 1.6;
 }
 
+/* -------------------------- GLOBAL / INSTITUTIONS ---------------------- */
+.inst-countries {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Ruda", sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--ink-soft);
+  margin: -1rem auto 2.5rem;
+}
+
+.inst-country-stat strong {
+  color: var(--accent);
+  font-size: 1.15em;
+}
+
+.inst-dot {
+  color: var(--ink-faint);
+}
+
+.inst-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.inst-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.inst-card:hover {
+  transform: translateY(-3px);
+  background: rgba(33, 35, 50, 0.55);
+}
+
+.inst-name {
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.inst-place {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
 /* ------------------------------- CTA ----------------------------------- */
 .about-cta {
   text-align: center;
