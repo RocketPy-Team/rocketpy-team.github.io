@@ -284,10 +284,6 @@
   background: linear-gradient(90deg, #14b8a6 0%, #99f6e4 100%);
 }
 
-.featured-card.tier-community::before {
-  background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
-}
-
 .featured-card:hover {
   transform: translateY(-8px);
   background: var(--panel-strong);
@@ -310,10 +306,6 @@
 
 .tier-core .featured-avatar-wrap {
   background: linear-gradient(135deg, #14b8a6 0%, #99f6e4 100%);
-}
-
-.tier-community .featured-avatar-wrap {
-  background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);
 }
 
 .featured-avatar {
@@ -345,10 +337,6 @@
 
 .tier-core .featured-role {
   color: var(--accent-maintainer);
-}
-
-.tier-community .featured-role {
-  color: #93c5fd;
 }
 
 .featured-bio {
