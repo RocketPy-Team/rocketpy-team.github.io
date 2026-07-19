@@ -280,8 +280,12 @@
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 100%);
 }
 
-.featured-card.tier-maintainer::before {
+.featured-card.tier-core::before {
   background: linear-gradient(90deg, #14b8a6 0%, #99f6e4 100%);
+}
+
+.featured-card.tier-community::before {
+  background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
 }
 
 .featured-card:hover {
@@ -304,8 +308,12 @@
   );
 }
 
-.tier-maintainer .featured-avatar-wrap {
+.tier-core .featured-avatar-wrap {
   background: linear-gradient(135deg, #14b8a6 0%, #99f6e4 100%);
+}
+
+.tier-community .featured-avatar-wrap {
+  background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);
 }
 
 .featured-avatar {
@@ -335,8 +343,12 @@
   color: var(--accent);
 }
 
-.tier-maintainer .featured-role {
+.tier-core .featured-role {
   color: var(--accent-maintainer);
+}
+
+.tier-community .featured-role {
+  color: #93c5fd;
 }
 
 .featured-bio {

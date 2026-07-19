@@ -229,13 +229,26 @@
           </div>
         </section>
 
-        <!-- ======================= MAINTAINERS ======================= -->
-        <section class="about-section" id="maintainers">
-          <h2 class="section-title">Core Maintainers</h2>
+        <!-- ======================= CORE TEAM ======================= -->
+        <section class="about-section" id="core-team">
+          <h2 class="section-title">Core Team</h2>
           <p class="section-lede">
-            Long-standing contributors who steward the codebase over the years.
+            The people who led the squads and stewarded RocketPy's code &mdash;
+            the library, the tests and the APIs &mdash; over the years.
           </p>
-          <div class="featured-grid" id="maintainersGrid">
+          <div class="featured-grid" id="coreGrid">
+            <!-- populated by JS -->
+          </div>
+        </section>
+
+        <!-- =================== COMMUNITY & OUTREACH =================== -->
+        <section class="about-section" id="community">
+          <h2 class="section-title">Community &amp; Outreach</h2>
+          <p class="section-lede">
+            RocketPy is more than code. These people carried it to competitions,
+            classrooms and communities around the world.
+          </p>
+          <div class="featured-grid" id="communityGrid">
             <!-- populated by JS -->
           </div>
         </section>
@@ -349,67 +362,134 @@
       const TEAM = {
         featured: [
           {
+            tier: "founder",
+            role: "Creator",
+            bio: "Started RocketPy at Projeto Jupiter and designed its 6-DOF simulation core. Lead author of the founding paper in the Journal of Aerospace Engineering.",
+            linkedin: "",
+            commits: 646,
             name: "Giovani Hidalgo Ceotto",
             handle: "giovaniceotto",
             avatar: "https://github.com/giovaniceotto.png?size=160",
-            role: "Creator",
-            bio: "Started RocketPy at Projeto Jupiter and designed its 6-DOF simulation core. Lead author of the founding paper in the Journal of Aerospace Engineering.",
-            tier: "founder",
-            commits: 646,
           },
           {
+            tier: "founder",
+            role: "Founding Contributor",
+            bio: "One of the very first contributors to RocketPy and co-author of the founding paper.",
+            linkedin: "",
+            commits: 3,
             name: "Rodrigo Schmitt",
             handle: "rodrigo-schmitt",
             avatar: "https://github.com/rodrigo-schmitt.png?size=160",
-            role: "Founding Contributor",
-            bio: "One of the very first contributors to RocketPy and co-author of the founding paper.",
-            tier: "founder",
-            commits: 3,
           },
           {
+            tier: "founder",
+            role: "Maintainer &amp; Coordinator",
+            bio: "Joined to lead the project's expansion and long-term sustainability. Co-author of the founding paper and the project's most active contributor.",
+            linkedin: "",
+            commits: 1722,
             name: "Guilherme Fernandes Alves",
             handle: "Gui-FernandesBR",
             avatar: "https://github.com/Gui-FernandesBR.png?size=160",
-            role: "Maintainer &amp; Coordinator",
-            bio: "Joined to lead the project's expansion and long-term sustainability. Co-author of the founding paper and the project's most active contributor.",
-            tier: "founder",
-            commits: 1722,
           },
           {
+            tier: "founder",
+            role: "Founding Contributor",
+            bio: "Joined early to help expand RocketPy and ensure its sustainability. Co-author of the founding paper.",
+            linkedin: "",
+            commits: 72,
             name: "Lucas Azevedo Pezente",
             handle: "lucasfourier",
             avatar: "https://github.com/lucasfourier.png?size=160",
-            role: "Founding Contributor",
-            bio: "Joined early to help expand RocketPy and ensure its sustainability. Co-author of the founding paper.",
-            tier: "founder",
-            commits: 72,
           },
           {
+            tier: "founder",
+            role: "Academic Advisor",
+            bio: "Professor at the University of São Paulo (USP) and academic advisor; co-author of the founding paper.",
+            linkedin: "",
+            commits: 0,
             name: "Bruno S. Carmo",
             handle: "",
             avatar: "",
-            role: "Academic Advisor",
-            bio: "Professor at the University of São Paulo (USP) and academic advisor; co-author of the founding paper.",
-            tier: "founder",
-            commits: 0,
           },
           {
+            tier: "core",
+            role: "Core Maintainer &middot; Library",
+            bio: "One of the most active contributors across the library's core, tests and simulation modules over many years.",
+            linkedin: "",
+            commits: 1251,
             name: "Mateus Stano Junqueira",
             handle: "MateusStano",
             avatar: "https://github.com/MateusStano.png?size=160",
-            role: "Core Maintainer",
-            bio: "One of the most active contributors across the library's core, tests and simulation modules over many years.",
-            tier: "maintainer",
-            commits: 1251,
           },
           {
+            tier: "core",
+            role: "Core Maintainer &middot; Library",
+            bio: "Sustained core contributor to the library's architecture, numerics and code quality.",
+            linkedin: "",
+            commits: 463,
             name: "Pedro Henrique Marinho Bressan",
             handle: "phmbressan",
             avatar: "https://github.com/phmbressan.png?size=160",
-            role: "Core Maintainer",
-            bio: "Sustained core contributor to the library's architecture, numerics and code quality.",
-            tier: "maintainer",
-            commits: 463,
+          },
+          {
+            tier: "core",
+            role: "Creator of the Infinity API",
+            bio: "Joined in 2023 and built the Infinity API &mdash; RocketPy's REST API &mdash; almost single-handedly. Also strengthened the library by documenting and optimizing its test suite.",
+            linkedin: "gabriel-barberini-728778b9",
+            commits: 18,
+            name: "Gabriel Barberini",
+            handle: "GabrielBarberini",
+            avatar: "https://github.com/GabrielBarberini.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Library Developer",
+            bio: "Joined the team in 2024, bringing valuable additions to the core library.",
+            linkedin: "lucas-de-oliveira-prates-ab3ab7192",
+            commits: 79,
+            name: "Lucas de Oliveira Prates",
+            handle: "Lucas-Prates",
+            avatar: "https://github.com/Lucas-Prates.png?size=160",
+          },
+          {
+            tier: "core",
+            role: "Front-End Lead",
+            bio: "Took on the challenge of building RocketPy's graphical interface. Joined through our hackathon and went on to lead the front-end (web development) squad.",
+            linkedin: "aasitvora",
+            commits: 0,
+            name: "Aasit Vora",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "community",
+            role: "RocketPy Europe Lead",
+            bio: "Joined in 2024 and became RocketPy's representative in Europe, leading the team at EuRoC for two consecutive years.",
+            linkedin: "lucasvigon",
+            commits: 13,
+            name: "Lucas Gonçalves",
+            handle: "LUCKIN13",
+            avatar: "https://github.com/LUCKIN13.png?size=160",
+          },
+          {
+            tier: "community",
+            role: "Outreach &middot; Generation Zero",
+            bio: "Part of RocketPy's generation zero, coming from Projeto Jupiter. Drove outreach in the project's first year and supported the front-end team with early ideas.",
+            linkedin: "brenolr",
+            commits: 0,
+            name: "Breno Rocha",
+            handle: "",
+            avatar: "",
+          },
+          {
+            tier: "community",
+            role: "Social Media &amp; Brand",
+            bio: "Joined in late 2023 and launched RocketPy's Instagram, supercharging our selection processes and spreading RocketPy's image around the world.",
+            linkedin: "samuelnascimentodemelosantos",
+            commits: 0,
+            name: "Samuel Nascimento",
+            handle: "",
+            avatar: "",
           },
         ],
         gallery: [
@@ -424,12 +504,6 @@
             handle: "PatrickSampaioUSP",
             avatar: "https://github.com/PatrickSampaioUSP.png?size=160",
             commits: 81,
-          },
-          {
-            name: "Lucas de Oliveira Prates",
-            handle: "Lucas-Prates",
-            avatar: "https://github.com/Lucas-Prates.png?size=160",
-            commits: 79,
           },
           {
             name: "Arthur Wang",
@@ -462,12 +536,6 @@
             commits: 18,
           },
           {
-            name: "Gabriel Barberini",
-            handle: "GabrielBarberini",
-            avatar: "https://github.com/GabrielBarberini.png?size=160",
-            commits: 18,
-          },
-          {
             name: "Ishan Dubey",
             handle: "aZira371",
             avatar: "https://github.com/aZira371.png?size=160",
@@ -496,12 +564,6 @@
             handle: "Malmahrouqi3",
             avatar: "https://github.com/Malmahrouqi3.png?size=160",
             commits: 15,
-          },
-          {
-            name: "Lucas Gonçalves",
-            handle: "LUCKIN13",
-            avatar: "https://github.com/LUCKIN13.png?size=160",
-            commits: 13,
           },
           {
             name: "Curtis Hu",
@@ -670,12 +732,6 @@
             handle: "nalquas",
             avatar: "https://github.com/nalquas.png?size=160",
             commits: 2,
-          },
-          {
-            name: "Aasit Vora",
-            handle: "",
-            avatar: "",
-            commits: 1,
           },
           {
             name: "Advait Chandorkar",
@@ -853,9 +909,15 @@
         return `<div class="${cls} avatar-fallback">${initials(person.name)}</div>`;
       }
 
-      function githubLink(handle, name) {
-        if (!handle) return "";
-        return `<a class="gh-link" href="https://github.com/${handle}" target="_blank" rel="noopener noreferrer" aria-label="${name} on GitHub"><i class="fa-brands fa-github"></i></a>`;
+      function socialLinks(person) {
+        let html = "";
+        if (person.handle) {
+          html += `<a class="gh-link" href="https://github.com/${person.handle}" target="_blank" rel="noopener noreferrer" aria-label="${person.name} on GitHub"><i class="fa-brands fa-github"></i></a>`;
+        }
+        if (person.linkedin) {
+          html += `<a class="gh-link" href="https://www.linkedin.com/in/${person.linkedin}/" target="_blank" rel="noopener noreferrer" aria-label="${person.name} on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>`;
+        }
+        return html;
       }
 
       function renderFeatured(gridId, tier) {
@@ -871,7 +933,7 @@
               <h3 class="featured-name">${p.name}</h3>
               <div class="featured-role">${p.role}</div>
               <p class="featured-bio">${p.bio}</p>
-              <div class="featured-socials">${githubLink(p.handle, p.name)}</div>
+              <div class="featured-socials">${socialLinks(p)}</div>
             `;
             grid.appendChild(card);
           });
@@ -898,15 +960,14 @@
       }
 
       function renderStats() {
-        const people =
-          TEAM.gallery.length +
-          TEAM.featured.filter((p) => p.commits > 0).length;
+        const people = TEAM.featured.length + TEAM.gallery.length;
         const el = document.getElementById("statPeople");
         if (el) el.textContent = people + "+";
       }
 
       renderFeatured("foundersGrid", "founder");
-      renderFeatured("maintainersGrid", "maintainer");
+      renderFeatured("coreGrid", "core");
+      renderFeatured("communityGrid", "community");
       renderContributors();
       renderStats();
     </script>
