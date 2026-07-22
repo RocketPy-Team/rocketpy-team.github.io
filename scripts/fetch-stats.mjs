@@ -17,6 +17,12 @@ import { readFile, writeFile } from "node:fs/promises";
 const REPO = "RocketPy-Team/RocketPy";
 const HTML = "dist/index.html";
 
+/* Hard cap per request. `continue-on-error` in CI handles a *failed* fetch, but
+   not a *hung* one — without this a slow/stalled API would keep the deploy step
+   waiting up to the job's default timeout. AbortSignal.timeout rejects the fetch
+   so the surrounding try/catch falls back to committed defaults. */
+const FETCH_TIMEOUT_MS = 8000;
+
 /* Committed fallbacks — kept in sync with the defaults hard-coded in index.html
    so the page still reads sensibly if every request below fails. `downloads`
    is a rolling ~180-day figure (see fetchDownloads), not the all-time total. */
@@ -24,6 +30,7 @@ const stats = { stars: 1021, forks: 268, contributors: 75, downloads: 25000 };
 
 const gh = (path) =>
   fetch(`https://api.github.com/${path}`, {
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     headers: {
       Accept: "application/vnd.github+json",
       "User-Agent": "rocketpy-site-build",
@@ -56,7 +63,10 @@ async function fetchContributors() {
 async function fetchDownloads() {
   const res = await fetch(
     "https://pypistats.org/api/packages/rocketpy/overall?mirrors=false",
-    { headers: { "User-Agent": "rocketpy-site-build" } },
+    {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+      headers: { "User-Agent": "rocketpy-site-build" },
+    },
   );
   if (!res.ok) throw new Error(`pypistats HTTP ${res.status}`);
   const json = await res.json();
