@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "RocketPy landing page - Advanced rocket trajectory simulator",
   "scripts": {
-    "format": "prettier --write '**/*.{html,css,js}'",
+    "format": "prettier --write '**/*.{html,css,js,mjs}'",
     "build": "npm run build:css && npm run build:html",
     "build:css": "npm run minify:css:main && npm run minify:css:footer && npm run minify:css:about && npm run minify:css:home",
     "build:html": "npm run minify:html:index && npm run minify:html:about",
