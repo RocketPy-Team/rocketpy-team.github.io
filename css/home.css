@@ -1,0 +1,988 @@
+/* ==========================================================================
+   ROCKETPY LANDING PAGE — HOME SECTIONS (home.css)
+   Loaded only by index.html, after main.css + footer.css.
+   Reuses main.css design tokens and ports the on-brand component recipes
+   first authored in about.css (stat row, featured cards, institution grid,
+   CTA cluster) so the landing page and the team page read as one system.
+   ========================================================================== */
+
+/* ---- tokens ported from about.css (main.css owns a disjoint set, so these
+        only ADD; they never override main.css and never leak — home.css is
+        not loaded on about.html). ------------------------------------------- */
+:root {
+  --accent: #f0ab50;
+  --accent-soft: #ffd38f;
+  --accent-teal: #2dd4bf;
+  --accent-teal-soft: #99f6e4;
+  --panel: rgba(33, 35, 50, 0.45);
+  --panel-strong: rgba(33, 35, 50, 0.65);
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.18);
+  --ink-soft: rgba(255, 255, 255, 0.78);
+  --ink-faint: rgba(255, 255, 255, 0.6);
+  --code-bg: #0b1226;
+}
+
+/* Compensate for the sticky header when jumping to an in-page anchor. */
+section[id],
+:target {
+  scroll-margin-top: 92px;
+}
+
+/* small layout helpers (keep markup free of inline styles) */
+.align-left {
+  text-align: left;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.mt-content {
+  margin-top: var(--space-content);
+}
+
+/* Overflow guard: grid/flex children default to min-width:auto, so a wide
+   child (the code block's long lines) would stretch the page instead of
+   scrolling. Let them shrink and keep their own overflow-x:auto. */
+.split-layout > * {
+  min-width: 0;
+}
+.code-block {
+  max-width: 100%;
+}
+
+/* The sticky site header / primary nav (base, responsive and reduced-motion
+   rules) now lives in the shared css/nav.css, loaded by both index.html and
+   about.html so they read as one site. */
+
+/* =============================== HERO ==================================== */
+.hero-sub {
+  margin-top: 4px;
+}
+
+.hero-sub strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.install-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-content);
+  padding: 9px 9px 9px 16px;
+  background: var(--code-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.install-chip code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.98rem;
+  color: #e6ebff;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.install-chip code::before {
+  content: "$ ";
+  color: var(--accent-text);
+}
+
+.install-hint {
+  margin-top: 12px;
+  font-family: "Ruda", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+}
+
+.hero-ctas {
+  margin-top: var(--space-content);
+  justify-content: flex-start;
+}
+
+.hero-microproof {
+  margin-top: 18px;
+  font-family: "Ruda", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-microproof strong {
+  color: var(--accent-text);
+}
+
+/* ====================== SHARED SECTION HEADINGS ========================== */
+/* Centered heading treatment for the new sections (kept distinct from
+   main.css's left-aligned .section-title, which the legacy split sections
+   still use). */
+.sec-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.sec-eyebrow {
+  font-family: "Ruda", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 10px;
+}
+
+.sec-eyebrow.is-teal {
+  color: var(--accent-teal);
+}
+
+.sec-title {
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.sec-title::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(
+    130deg,
+    var(--accent) 0%,
+    var(--accent-soft) 100%
+  );
+}
+
+.sec-lede {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-top: 16px;
+}
+
+.sec-cta {
+  text-align: center;
+  margin-top: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.text-link {
+  font-family: "Ruda", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent-text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 195, 121, 0.35);
+  transition: color 0.2s ease;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--accent-strong);
+}
+
+/* =========================== STATS BAND ================================= */
+.stats-band {
+  padding: clamp(1.6rem, 4vw, 2.3rem) clamp(1.5rem, 4vw, 2.4rem);
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.1rem, 4vw, 3rem);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 88px;
+}
+
+.stat-num {
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.15rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.stat-num.is-accent {
+  color: var(--accent-text);
+}
+
+.stat-label {
+  font-family: "Ruda", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.stats-note {
+  margin-top: 18px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+/* ===================== QUICKSTART / CODE BLOCK ========================== */
+.quickstart-layout {
+  align-items: start;
+}
+
+.qs-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.qs-step {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.qs-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  color: var(--accent-text);
+  background: rgba(240, 171, 80, 0.12);
+  border: 1px solid rgba(240, 171, 80, 0.28);
+}
+
+.qs-step h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.02rem;
+  color: #ffffff;
+  margin: 6px 0 2px;
+}
+
+.qs-step p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.qs-step code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: var(--accent-teal-soft);
+  font-size: 0.88em;
+}
+
+.code-block {
+  position: relative;
+  background: var(--code-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  padding: 44px 16px 16px;
+  overflow-x: auto;
+}
+
+.code-block::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 42px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 5px 5px, #ff5f57 4px, transparent 5px),
+    radial-gradient(circle at 21px 5px, #febc2e 4px, transparent 5px),
+    radial-gradient(circle at 37px 5px, #28c840 4px, transparent 5px);
+}
+
+.code-block code {
+  display: block;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: #e6ebff;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.tok-kw {
+  color: #ff9ec4;
+}
+.tok-cls {
+  color: #7fd4ff;
+}
+.tok-fn {
+  color: #8ce6b0;
+}
+.tok-str {
+  color: #ffd38f;
+}
+.tok-num {
+  color: #c3a6ff;
+}
+.tok-com {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+.tok-op {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Ruda", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.copy-btn.is-copied {
+  color: var(--accent-teal);
+  border-color: rgba(45, 212, 191, 0.5);
+}
+
+.install-chip .copy-btn {
+  position: static;
+}
+
+.qs-ctas {
+  margin-top: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+/* ============================ SHOWCASE ================================== */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: 20px;
+}
+
+.showcase-card {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--hairline-strong);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+}
+
+.showcase-figure {
+  padding: 12px 12px 0;
+  background: radial-gradient(
+    circle at 50% 35%,
+    rgba(240, 171, 80, 0.08),
+    transparent 70%
+  );
+}
+
+.showcase-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.showcase-cap {
+  padding: 10px 20px 22px;
+}
+
+.showcase-cap h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.04rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.showcase-cap p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ========================= FEATURES GRID ================================ */
+/* Auto-scrolling feature carousel (driven by the marquee script in
+   index.html). Bleeds to the panel edges; the section's overflow:hidden clips
+   the scrolling track at the rounded corners. */
+.feat-marquee {
+  margin: 0 calc(-1 * clamp(1.5rem, 4vw, 2.4rem));
+  padding: 10px clamp(1.5rem, 4vw, 2.4rem);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Scrollbar hidden only while the auto-scroll is active (JS adds the class);
+   without JS the scrollbar stays as a manual-scroll affordance. */
+.feat-marquee.is-animating {
+  scrollbar-width: none;
+}
+
+.feat-marquee.is-animating::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+}
+
+.feat-marquee .feat-card {
+  flex: 0 0 clamp(240px, 72vw, 288px);
+}
+
+.feat-card {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 24px 22px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feat-card:hover {
+  transform: translateY(-6px);
+  background: var(--panel-strong);
+  border-color: var(--hairline-strong);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36);
+}
+
+.feat-icon {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--accent-text);
+  background: rgba(240, 171, 80, 0.12);
+  border: 1px solid rgba(240, 171, 80, 0.24);
+}
+
+.feat-card h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.06rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.feat-card p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ==================== VALIDATION + USED-BY WALL ========================= */
+.validation-layout {
+  align-items: center;
+  margin-bottom: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.validation-head .big-stat {
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-weight: 700;
+  color: var(--accent-text);
+  line-height: 1;
+}
+
+.validation-head p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-top: 12px;
+}
+
+.usedby-label {
+  text-align: center;
+  font-family: "Ruda", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+
+.inst-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+  gap: 14px;
+}
+
+.inst-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.inst-card:hover {
+  transform: translateY(-3px);
+  background: rgba(33, 35, 50, 0.55);
+}
+
+.inst-name {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.inst-place {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.84rem;
+  color: var(--ink-faint);
+}
+
+.contrib-note {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.86rem;
+  color: var(--ink-faint);
+  text-align: center;
+  max-width: 640px;
+  margin: 1.8rem auto 0;
+  line-height: 1.6;
+}
+
+.contrib-note a {
+  color: var(--accent-soft);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 211, 143, 0.35);
+}
+
+/* =========================== ECOSYSTEM ================================== */
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.eco-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 24px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.eco-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0.85;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 100%);
+}
+
+.eco-card:hover {
+  transform: translateY(-6px);
+  background: var(--panel-strong);
+  border-color: var(--hairline-strong);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.eco-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.eco-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  font-size: 18px;
+  color: var(--accent-text);
+  background: rgba(240, 171, 80, 0.12);
+  border: 1px solid rgba(240, 171, 80, 0.24);
+  flex-shrink: 0;
+}
+
+.eco-name {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.eco-badge {
+  margin-left: auto;
+  font-family: "Ruda", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.eco-badge .fa-star {
+  color: var(--accent-strong);
+  font-size: 11px;
+}
+
+.eco-desc {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  flex-grow: 1;
+}
+
+.eco-link {
+  margin-top: 16px;
+  font-family: "Ruda", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent-text);
+}
+
+.eco-card:hover .eco-link {
+  color: var(--accent-strong);
+}
+
+/* =========================== COMMUNITY ================================= */
+.community-lede {
+  max-width: 720px;
+  margin: 0 auto clamp(1.6rem, 4vw, 2.2rem);
+  text-align: center;
+}
+
+.community-lede p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.community-lede strong {
+  color: #ffffff;
+}
+
+.community-lede a {
+  color: var(--accent-soft);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 211, 143, 0.35);
+}
+
+.channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 14px;
+  margin-bottom: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.channel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 12px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid var(--hairline);
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.channel-card i {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.channel-card span {
+  font-family: "Ruda", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.channel-card:hover {
+  transform: translateY(-4px);
+  background: rgba(33, 35, 50, 0.6);
+  border-color: rgba(240, 171, 80, 0.35);
+}
+
+.channel-card:hover span {
+  color: #ffffff;
+}
+
+/* ============================ CITE ===================================== */
+.cite-grid {
+  display: grid;
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.cite-item {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.cite-item h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.cite-meta {
+  font-family: "Open Sans", sans-serif;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.cite-meta a {
+  color: var(--accent-text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 195, 121, 0.35);
+}
+
+.cite-bibtex {
+  max-width: 920px;
+  margin: 20px auto 0;
+}
+
+.cite-bibtex .code-block {
+  padding-top: 16px;
+}
+
+.cite-bibtex .code-block::before {
+  content: none;
+}
+
+/* ============================ FINAL CTA ================================= */
+.final-cta {
+  text-align: center;
+  padding: clamp(2.2rem, 6vw, 3.6rem) 1.5rem;
+}
+
+.final-cta .install-chip {
+  margin: var(--space-content) auto 0;
+}
+
+.final-cta .cta-buttons {
+  margin-top: var(--space-content);
+}
+
+/* ===================== PORTED CTA CLUSTER (about.css) =================== */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Ruda", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.cta-primary {
+  background: linear-gradient(
+    130deg,
+    var(--accent) 0%,
+    var(--accent-soft) 100%
+  );
+  color: #030b28;
+  box-shadow: 0 6px 20px rgba(240, 171, 80, 0.35);
+}
+
+.cta-primary:hover,
+.cta-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(240, 171, 80, 0.5);
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid var(--hairline-strong);
+}
+
+.cta-secondary:hover,
+.cta-secondary:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.cta-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+}
+
+.cta-ghost:hover,
+.cta-ghost:focus-visible {
+  color: #ffffff;
+}
+
+/* ===================== EXTENDED SCROLL-REVEAL STAGGER =================== */
+/* main.css only staggers children 1–4; grids need more. */
+.reveal-section.is-visible .reveal-item:nth-child(5) {
+  transition-delay: 0.36s;
+}
+.reveal-section.is-visible .reveal-item:nth-child(6) {
+  transition-delay: 0.42s;
+}
+.reveal-section.is-visible .reveal-item:nth-child(7) {
+  transition-delay: 0.48s;
+}
+.reveal-section.is-visible .reveal-item:nth-child(8) {
+  transition-delay: 0.52s;
+}
+.reveal-section.is-visible .reveal-item:nth-child(9) {
+  transition-delay: 0.56s;
+}
+.reveal-section.is-visible .reveal-item:nth-child(n + 10) {
+  transition-delay: 0.6s;
+}
+
+/* ============================ RESPONSIVE =============================== */
+/* Header/nav breakpoints live in css/nav.css. */
+@media (max-width: 560px) {
+  .qs-ctas .cta-btn,
+  .hero-ctas .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Legacy centered heading collision guard: the new sections use .sec-title,
+   so main.css's .section-title is untouched here. */
+
+/* ========================= REDUCED MOTION ============================== */
+@media (prefers-reduced-motion: reduce) {
+  .cta-btn,
+  .copy-btn,
+  .feat-card,
+  .eco-card,
+  .inst-card,
+  .showcase-card,
+  .channel-card {
+    transition: none;
+  }
+
+  .cta-btn:hover,
+  .feat-card:hover,
+  .eco-card:hover,
+  .inst-card:hover,
+  .showcase-card:hover,
+  .channel-card:hover {
+    transform: none;
+  }
+
+  /* No auto-scroll: fall back to a static, wrapping grid of feature cards. */
+  .feat-marquee {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .marquee-track {
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+  }
+
+  .feat-marquee .feat-card {
+    flex: 1 1 240px;
+    max-width: 320px;
+  }
+}

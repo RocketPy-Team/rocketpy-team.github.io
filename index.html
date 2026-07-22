@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="RocketPy - Open-source rocket trajectory simulator for aerospace engineering and rocketry. Advanced flight simulation with six-degrees-of-freedom trajectory analysis."
+      content="RocketPy is the next-generation open-source six-degree-of-freedom (6-DOF) rocket trajectory simulator for High-Power Rocketry — Monte Carlo dispersion, real weather data, solid/hybrid/liquid motors, and validated sub-1% apogee accuracy. Free and MIT-licensed."
     />
     <meta
       name="keywords"
-      content="RocketPy, rocket simulation, trajectory simulator, aerospace, rocketry, flight dynamics, open source"
+      content="RocketPy, rocket simulation, trajectory simulator, 6-DOF, six degrees of freedom, Monte Carlo, aerospace, rocketry, flight dynamics, open source, Python"
     />
     <meta
       property="og:title"
@@ -17,7 +17,7 @@
     />
     <meta
       property="og:description"
-      content="Open-source rocket trajectory simulator for aerospace engineering and rocketry"
+      content="The next-generation open-source 6-DOF rocket trajectory simulator. Monte Carlo dispersion, real weather data, validated to under 1% apogee error. Written in Python, MIT-licensed."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rocketpy.org" />
@@ -52,10 +52,23 @@
     />
 
     <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/nav.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/home.css" rel="stylesheet" />
     <link href="./css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
     <link href="./css/font-awesome/css/solid.min.css" rel="stylesheet" />
     <link href="./css/font-awesome/css/brands.min.css" rel="stylesheet" />
+
+    <!-- Without JS the scroll-reveal never fires; show everything up-front. -->
+    <noscript>
+      <style>
+        .reveal-section,
+        .reveal-item {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
 
     <title>RocketPy - Advanced Rocket Trajectory Simulator</title>
     <script type="application/ld+json">
@@ -64,7 +77,7 @@
         "@type": "SoftwareApplication",
         "name": "RocketPy",
         "url": "https://rocketpy.org/",
-        "description": "Open-source rocket trajectory simulator for aerospace engineering and rocketry with six-degrees-of-freedom trajectory analysis.",
+        "description": "Open-source six-degree-of-freedom (6-DOF) rocket trajectory simulator for aerospace engineering and High-Power Rocketry, with Monte Carlo dispersion analysis and real weather data.",
         "applicationCategory": "Scientific",
         "operatingSystem": "Linux, macOS, Windows",
         "programmingLanguage": "Python",
@@ -79,62 +92,69 @@
         },
         "sameAs": [
           "https://github.com/RocketPy-Team/RocketPy",
-          "https://pypi.org/project/rocketpy/"
+          "https://pypi.org/project/rocketpy/",
+          "https://www.linkedin.com/company/rocketpy",
+          "https://www.instagram.com/rocketpyteam"
         ]
       }
     </script>
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <div class="page-wrapper">
-      <header class="top-bar">
-        <div class="brand-and-cta">
+      <header class="site-header" id="top">
+        <a
+          class="brand-link"
+          href="https://rocketpy.org"
+          aria-label="RocketPy home"
+        >
+          <span class="brand-logo"></span>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#showcase">Showcase</a>
+          <a class="nav-link" href="#ecosystem">Ecosystem</a>
           <a
-            class="brand-link"
-            href="https://rocketpy.org"
-            aria-label="RocketPy home"
-          >
-            <span class="brand-logo"></span>
-          </a>
-        </div>
-        <nav class="social-nav panel-bg" aria-label="Main navigation">
-          <a href="./about.html" class="icon-button" aria-label="About us"
-            ><i class="fa-solid fa-users"></i
-          ></a>
-          <a
+            class="nav-link"
             href="https://docs.rocketpy.org/en/latest/index.html"
-            class="icon-button"
-            aria-label="Documentation"
-            ><i class="fa-solid fa-book"></i
-          ></a>
-          <a
-            href="https://github.com/RocketPy-Team/RocketPy"
-            class="icon-button"
-            aria-label="GitHub repository"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/rocketpyteam"
-            class="icon-button"
-            aria-label="Instagram"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/company/rocketpy"
-            class="icon-button"
-            aria-label="LinkedIn"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@rocketpyteam5828"
-            class="icon-button"
-            aria-label="YouTube"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
+            >Docs</a
+          >
+          <a class="nav-link" href="#community">Community</a>
+          <a class="nav-link" href="./about.html">About</a>
         </nav>
+        <div class="nav-actions">
+          <a
+            class="star-badge"
+            href="https://github.com/RocketPy-Team/RocketPy"
+            aria-label="Star RocketPy on GitHub"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <span data-stat="stars">1,021</span>
+          </a>
+          <a
+            href="https://app.rocketpy.org/"
+            class="simulate-button nav-cta"
+            role="button"
+          >
+            <span class="simulate-icon"></span>
+            <span>Simulate</span>
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
       </header>
 
-      <main class="main-content">
+      <main class="main-content" id="main">
+        <!-- ============================ HERO =========================== -->
         <section
           class="hero-section panel-bg reveal-section"
           aria-labelledby="hero-heading"
@@ -142,25 +162,54 @@
           <div class="split-layout hero-layout">
             <div class="text-column">
               <p class="hero-kicker reveal-item">
-                Open-source aerospace simulation
+                Open source · 6-DOF rocket flight simulation
               </p>
               <h1 id="hero-heading" class="hero-tagline reveal-item">
                 The sky is not the limit!
               </h1>
-              <p class="section-text reveal-item">
-                RocketPy is an innovative rocket trajectory simulator that
-                includes features never seen before in the state-of-the-art
-                rocket trajectory simulators.
+              <p class="section-text hero-sub reveal-item">
+                RocketPy is the next-generation, open-source simulator for
+                High-Power Rocketry — a full six-degrees-of-freedom flight built
+                on real weather data, Monte&nbsp;Carlo-ready, and
+                <strong>validated to under 1% apogee error</strong> against real
+                launches.
               </p>
-              <a
-                href="https://app.rocketpy.org/"
-                class="simulate-button hero-simulate-button reveal-item"
-                role="button"
-                aria-label="Launch simulation tool"
-              >
-                <span class="simulate-icon"></span>
-                <span>SIMULATE WITH ROCKETPY</span>
-              </a>
+              <div class="install-chip reveal-item">
+                <code>pip install rocketpy</code>
+                <button
+                  class="copy-btn"
+                  type="button"
+                  data-copy="pip install rocketpy"
+                  aria-label="Copy install command"
+                >
+                  <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p class="install-hint reveal-item">
+                Python ≥ 3.10 · also on conda-forge · runs in Jupyter &amp;
+                Google Colab
+              </p>
+              <div class="cta-buttons hero-ctas reveal-item">
+                <a
+                  href="https://app.rocketpy.org/"
+                  class="cta-btn cta-primary"
+                  aria-label="Launch the RocketPy web app"
+                >
+                  <span class="simulate-icon"></span>
+                  <span>Simulate with RocketPy</span>
+                </a>
+                <a
+                  href="https://docs.rocketpy.org/en/latest/index.html"
+                  class="cta-btn cta-secondary"
+                  >Read the docs</a
+                >
+                <a href="#quickstart" class="cta-btn cta-ghost">Quickstart ↓</a>
+              </div>
+              <p class="hero-microproof reveal-item">
+                MIT licensed ·
+                <strong><span data-stat="stars">1,021</span>★</strong>
+                on GitHub · 170k+ total downloads · used on 6 continents
+              </p>
             </div>
             <div class="media-column reveal-item">
               <img
@@ -176,37 +225,415 @@
           </div>
         </section>
 
+        <!-- ========================= STATS BAND ======================== -->
         <section
+          class="content-section panel-bg reveal-section stats-band"
+          aria-labelledby="stats-heading"
+        >
+          <h2 id="stats-heading" class="sr-only">RocketPy by the numbers</h2>
+          <div class="stat-row">
+            <div class="stat-item reveal-item">
+              <span class="stat-num" data-stat="stars">1,021</span>
+              <span class="stat-label">GitHub stars</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-num" data-stat="forks">268</span>
+              <span class="stat-label">Forks</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-num" data-stat="contributors">75+</span>
+              <span class="stat-label">Contributors</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-num" data-stat="downloads">25k+</span>
+              <span class="stat-label">Downloads (6&nbsp;mo)</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-num is-accent">&lt;1%</span>
+              <span class="stat-label">Apogee error</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-num">2018</span>
+              <span class="stat-label">Building since</span>
+            </div>
+          </div>
+          <p class="stats-note reveal-item">
+            Updated <span data-stat="updated">July 2026</span> ·
+            <a
+              class="text-link"
+              href="https://github.com/RocketPy-Team/RocketPy"
+              >star us on GitHub</a
+            >
+          </p>
+        </section>
+
+        <!-- ========================= QUICKSTART ======================== -->
+        <section
+          id="quickstart"
+          class="content-section panel-bg reveal-section"
+          aria-labelledby="quickstart-heading"
+        >
+          <div class="sec-head reveal-item">
+            <p class="sec-eyebrow">Quickstart</p>
+            <h2 id="quickstart-heading" class="sec-title">
+              Your first flight, in four classes
+            </h2>
+            <p class="sec-lede">
+              Describe the sky, the motor, and the rocket — RocketPy handles the
+              full 6-DOF physics. Here is a complete simulation of the
+              <em>Calisto</em> rocket, ready to run in a notebook or Google
+              Colab.
+            </p>
+          </div>
+          <div class="split-layout quickstart-layout">
+            <ol class="qs-steps reveal-item">
+              <li class="qs-step">
+                <span class="qs-num">1</span>
+                <div>
+                  <h3><code>Environment</code></h3>
+                  <p>
+                    Pull real forecast, reanalysis or sounding data for launch
+                    day.
+                  </p>
+                </div>
+              </li>
+              <li class="qs-step">
+                <span class="qs-num">2</span>
+                <div>
+                  <h3><code>Motor</code></h3>
+                  <p>
+                    Pick a variant —
+                    <code>SolidMotor</code>, <code>HybridMotor</code>,
+                    <code>LiquidMotor</code> or <code>GenericMotor</code> — each
+                    built from its thrust curve and geometry.
+                  </p>
+                </div>
+              </li>
+              <li class="qs-step">
+                <span class="qs-num">3</span>
+                <div>
+                  <h3><code>Rocket</code></h3>
+                  <p>
+                    Add nose cone, fins, tail and parachutes with real
+                    aerodynamics.
+                  </p>
+                </div>
+              </li>
+              <li class="qs-step">
+                <span class="qs-num">4</span>
+                <div>
+                  <h3><code>Flight</code></h3>
+                  <p>Launch it and explore trajectory, forces and recovery.</p>
+                </div>
+              </li>
+            </ol>
+            <div class="qs-code reveal-item">
+              <pre
+                class="code-block"
+              ><button class="copy-btn" type="button" aria-label="Copy code"><i class="fa-solid fa-copy" aria-hidden="true"></i><span class="copy-label">Copy</span></button><code><span class="tok-kw">from</span> rocketpy <span class="tok-kw">import</span> <span class="tok-cls">Environment</span>, <span class="tok-cls">SolidMotor</span>, <span class="tok-cls">Rocket</span>, <span class="tok-cls">Flight</span>
+
+<span class="tok-com"># 1 · Describe the sky — real forecast weather</span>
+env = <span class="tok-cls">Environment</span>(latitude=<span class="tok-num">32.99</span>, longitude=-<span class="tok-num">106.97</span>, elevation=<span class="tok-num">1400</span>)
+env.<span class="tok-fn">set_atmospheric_model</span>(type=<span class="tok-str">"Forecast"</span>, file=<span class="tok-str">"GFS"</span>)
+
+<span class="tok-com"># 2 · Build the motor (SolidMotor here — also Hybrid/Liquid/Generic)</span>
+motor = <span class="tok-cls">SolidMotor</span>(
+    thrust_source=<span class="tok-str">"Cesaroni_M1670.eng"</span>,
+    dry_mass=<span class="tok-num">1.815</span>, grain_number=<span class="tok-num">5</span>, nozzle_radius=<span class="tok-num">0.033</span>,
+)
+
+<span class="tok-com"># 3 · Assemble the rocket</span>
+calisto = <span class="tok-cls">Rocket</span>(radius=<span class="tok-num">0.0635</span>, mass=<span class="tok-num">14.426</span>, inertia=(<span class="tok-num">6.32</span>, <span class="tok-num">6.32</span>, <span class="tok-num">0.034</span>))
+calisto.<span class="tok-fn">add_motor</span>(motor, position=-<span class="tok-num">1.255</span>)
+calisto.<span class="tok-fn">add_nose</span>(length=<span class="tok-num">0.558</span>, kind=<span class="tok-str">"von karman"</span>, position=<span class="tok-num">1.278</span>)
+calisto.<span class="tok-fn">add_trapezoidal_fins</span>(n=<span class="tok-num">4</span>, root_chord=<span class="tok-num">0.12</span>, tip_chord=<span class="tok-num">0.06</span>, span=<span class="tok-num">0.11</span>)
+calisto.<span class="tok-fn">add_parachute</span>(<span class="tok-str">"Main"</span>, cd_s=<span class="tok-num">10.0</span>, trigger=<span class="tok-num">800</span>)
+
+<span class="tok-com"># 4 · Fly it — full 6-DOF simulation</span>
+flight = <span class="tok-cls">Flight</span>(rocket=calisto, environment=env, rail_length=<span class="tok-num">5.2</span>)
+flight.<span class="tok-fn">all_info</span>()</code></pre>
+            </div>
+          </div>
+          <div class="cta-buttons qs-ctas reveal-item">
+            <a
+              href="https://colab.research.google.com/github/RocketPy-Team/RocketPy/blob/master/docs/notebooks/getting_started_colab.ipynb"
+              class="cta-btn cta-primary"
+            >
+              <i class="fa-solid fa-play" aria-hidden="true"></i>
+              <span>Open in Colab</span>
+            </a>
+            <a
+              href="https://docs.rocketpy.org/en/latest/user/first_simulation.html"
+              class="cta-btn cta-secondary"
+              >Full getting-started guide</a
+            >
+          </div>
+        </section>
+
+        <!-- ========================== SHOWCASE ========================= -->
+        <section
+          id="showcase"
+          class="content-section panel-bg reveal-section"
+          aria-labelledby="showcase-heading"
+        >
+          <div class="sec-head reveal-item">
+            <p class="sec-eyebrow">See what it produces</p>
+            <h2 id="showcase-heading" class="sec-title">
+              Publication-grade results
+            </h2>
+            <p class="sec-lede">
+              One simulation yields the full picture — 3D trajectory,
+              kinematics, stability, and the statistical landing footprint that
+              matters for a safe recovery.
+            </p>
+          </div>
+          <div class="showcase-grid">
+            <figure class="showcase-card reveal-item">
+              <div class="showcase-figure">
+                <img
+                  src="./images/showcase/flight-3d.svg"
+                  alt="A three-dimensional flight trajectory arcing over a ground grid"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="320"
+                />
+              </div>
+              <figcaption class="showcase-cap">
+                <h3>3D trajectory</h3>
+                <p>
+                  Full flight path in space — exportable to Google Earth via
+                  KML.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="showcase-card reveal-item">
+              <div class="showcase-figure">
+                <img
+                  src="./images/monte-carlo-dispersion.svg"
+                  alt="Monte Carlo impact dispersion with a confidence ellipse around the target"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="320"
+                />
+              </div>
+              <figcaption class="showcase-cap">
+                <h3>Monte Carlo dispersion</h3>
+                <p>
+                  Thousands of runs give the landing ellipse and its confidence
+                  interval.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="showcase-card reveal-item">
+              <div class="showcase-figure">
+                <img
+                  src="./images/showcase/altitude-speed.svg"
+                  alt="Altitude and velocity plotted against time, peaking at apogee"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="320"
+                />
+              </div>
+              <figcaption class="showcase-cap">
+                <h3>Altitude &amp; velocity</h3>
+                <p>Every flight variable resolved continuously versus time.</p>
+              </figcaption>
+            </figure>
+            <figure class="showcase-card reveal-item">
+              <div class="showcase-figure">
+                <img
+                  src="./images/showcase/stability-margin.svg"
+                  alt="Static stability margin over time staying inside the stable band"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="320"
+                />
+              </div>
+              <figcaption class="showcase-cap">
+                <h3>Stability margin</h3>
+                <p>
+                  Track the static margin through the burn to stay in control.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+          <p class="sec-cta">
+            <a
+              class="text-link"
+              href="https://docs.rocketpy.org/en/latest/examples/index.html"
+              >Explore worked examples in the docs →</a
+            >
+          </p>
+        </section>
+
+        <!-- ========================== FEATURES ========================= -->
+        <section
+          id="features"
           class="content-section panel-bg reveal-section"
           aria-labelledby="features-heading"
         >
-          <h2 id="features-heading" class="section-title reveal-item">
-            Let's be realistic
-          </h2>
-          <div class="split-layout">
-            <div class="text-column">
-              <p class="section-text reveal-item">
-                RocketPy's environment construction uses weather data from
-                several meteorological agencies, providing precise information
-                about atmospheric conditions and taking into account different
-                kinds of uncertainties associated with the mathematical models
-                of the phenomena.
-                <a
-                  href="https://ascelibrary.org/doi/10.1061/%28ASCE%29AS.1943-5525.0001331"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Read our paper on the Journal of Aerospace Engineering
-                </a>
-                to know more about the mathematical models and the software
-                architecture.
+          <div class="sec-head reveal-item">
+            <p class="sec-eyebrow">Capabilities</p>
+            <h2 id="features-heading" class="sec-title">
+              Everything a serious flight needs
+            </h2>
+            <p class="sec-lede">
+              High-fidelity physics under the hood, a clean Python API on top —
+              from propulsion to recovery, weather to control.
+            </p>
+          </div>
+          <div
+            class="feat-marquee"
+            data-marquee
+            aria-label="Feature highlights, auto-scrolling"
+          >
+            <div class="marquee-track">
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"><i class="fa-solid fa-cube"></i></span>
+                <h3>Full 6-DOF flight</h3>
+                <p>
+                  Nonlinear six-degrees-of-freedom dynamics with rigorous
+                  variable-mass effects.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"><i class="fa-solid fa-dice"></i></span>
+                <h3>Monte Carlo &amp; sensitivity</h3>
+                <p>
+                  Dispersion analysis and global sensitivity for landing-ellipse
+                  prediction.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"><i class="fa-solid fa-fire"></i></span>
+                <h3>Solid, hybrid &amp; liquid motors</h3>
+                <p>
+                  Model any propulsion type straight from a thrust curve or
+                  <code>.eng</code> file.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"><i class="fa-solid fa-plane"></i></span>
+                <h3>Aerodynamic surfaces</h3>
+                <p>
+                  Nose cones, fins and tails via Barrowman equations, plus
+                  custom drag curves.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-umbrella"></i
+                ></span>
+                <h3>Parachutes &amp; recovery</h3>
+                <p>
+                  Multiple chutes with custom trigger functions and sensor-noise
+                  simulation.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-cloud-sun-rain"></i
+                ></span>
+                <h3>Real weather &amp; atmosphere</h3>
+                <p>
+                  ISA 1976, Wyoming soundings and live NOAA / ECMWF forecast and
+                  ensemble data.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-layer-group"></i
+                ></span>
+                <h3>Multi-stage rockets</h3>
+                <p>
+                  Simulate staged vehicles with independent motors, events and
+                  recovery.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-sliders"></i
+                ></span>
+                <h3>Custom control laws</h3>
+                <p>
+                  Inject continuous or discrete control for fins, air-brakes and
+                  active systems.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-gauge-high"></i
+                ></span>
+                <h3>Stability analysis</h3>
+                <p>
+                  Static margin, damping and out-of-rail conditions resolved
+                  across the flight.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-satellite-dish"></i
+                ></span>
+                <h3>Sensor simulation</h3>
+                <p>
+                  Emulate accelerometers, gyroscopes and barometers with
+                  realistic noise.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-file-export"></i
+                ></span>
+                <h3>MATLAB &amp; Python interop</h3>
+                <p>
+                  Script it in Python or drive it from MATLAB — and export
+                  results anywhere.
+                </p>
+              </article>
+              <article class="feat-card reveal-item">
+                <span class="feat-icon"
+                  ><i class="fa-solid fa-earth-americas"></i
+                ></span>
+                <h3>KML / Google Earth</h3>
+                <p>
+                  Export trajectories to KML and fly them over real terrain in
+                  Google Earth.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== VALIDATION + USED BY ==================== -->
+        <section
+          id="validation"
+          class="content-section panel-bg reveal-section"
+          aria-labelledby="validation-heading"
+        >
+          <div class="split-layout validation-layout">
+            <div class="text-column validation-head reveal-item">
+              <p class="sec-eyebrow">Proven in the field</p>
+              <p class="big-stat">&lt;1%</p>
+              <h2 id="validation-heading" class="section-title">
+                Apogee error versus real flights
+              </h2>
+              <p>
+                Because RocketPy flies on the actual sky — real forecast,
+                reanalysis and sounding data — its predictions match reality. It
+                has been validated against
+                <strong>17 documented real flights</strong> from student and
+                professional teams across four continents.
               </p>
             </div>
             <div class="media-column reveal-item">
               <img
                 src="./images/environment-atmosphere.svg"
                 alt="Atmospheric layers and weather sounding data above a planet horizon"
-                class="section-graphic environment-graphic"
+                class="section-graphic"
                 loading="lazy"
                 decoding="async"
                 width="400"
@@ -214,73 +641,227 @@
               />
             </div>
           </div>
+          <p class="usedby-label reveal-item">
+            Flown &amp; validated by teams worldwide
+          </p>
+          <ul class="inst-grid">
+            <li class="inst-card reveal-item">
+              <span class="inst-name">Projeto Jupiter — USP</span>
+              <span class="inst-place">São Paulo, Brazil</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">EPFL Rocket Team</span>
+              <span class="inst-place">Lausanne, Switzerland</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">University of Notre Dame</span>
+              <span class="inst-place">Indiana, USA</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">Space Enterprise at Berkeley</span>
+              <span class="inst-place">California, USA</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">U. of Toronto Aerospace</span>
+              <span class="inst-place">Toronto, Canada</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">TU Wien Space Team</span>
+              <span class="inst-place">Vienna, Austria</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">Faraday Rocketry UPV</span>
+              <span class="inst-place">Valencia, Spain</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">Politecnico di Torino</span>
+              <span class="inst-place">Turin, Italy</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">Aerospace Team Graz</span>
+              <span class="inst-place">Graz, Austria</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">STAR — UC3M</span>
+              <span class="inst-place">Madrid, Spain</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">Aristotle Space &amp; Aeronautics</span>
+              <span class="inst-place">Thessaloniki, Greece</span>
+            </li>
+            <li class="inst-card reveal-item">
+              <span class="inst-name">BME Suborbitals</span>
+              <span class="inst-place">Budapest, Hungary</span>
+            </li>
+          </ul>
+          <p class="contrib-note">
+            RocketPy is the
+            <strong
+              >official flight simulator of the European Rocketry Challenge
+              (EuRoC)</strong
+            >
+            since 2022 and of the
+            <strong>Latin American Space Challenge (LASC)</strong> since 2025 —
+            and the RocketPy team actively supports and partners with both. It
+            is trusted by 100+ university teams worldwide, including at the
+            Spaceport America Cup.
+            <a href="https://docs.rocketpy.org/en/latest/examples/index.html"
+              >See all validation examples →</a
+            >
+          </p>
         </section>
 
+        <!-- ========================= ECOSYSTEM ========================= -->
         <section
+          id="ecosystem"
           class="content-section panel-bg reveal-section"
-          aria-labelledby="predictions-heading"
+          aria-labelledby="ecosystem-heading"
         >
-          <h2 id="predictions-heading" class="section-title reveal-item">
-            Simulation is all about predictions
-          </h2>
-          <div class="split-layout">
-            <div class="text-column">
-              <p class="section-text reveal-item">
-                A key feature in RocketPy is the Monte Carlo analysis, which
-                shows the confidence interval of the impact coordinates.
-                RocketPy was also successfully validated for several rockets,
-                with apogee predictions showing deviations of the order of 1%
-                when compared to actual flight data. See a list of comparisons
-                and examples in our
-                <a
-                  href="https://docs.rocketpy.org/en/latest/examples/index.html"
-                  rel="noopener noreferrer"
+          <div class="sec-head reveal-item">
+            <p class="sec-eyebrow">The constellation</p>
+            <h2 id="ecosystem-heading" class="sec-title">
+              One ecosystem, from design to flight
+            </h2>
+            <p class="sec-lede">
+              RocketPy is more than a library. A whole toolchain surrounds it —
+              import your designs, call it over an API, or simulate right in the
+              browser.
+            </p>
+          </div>
+          <div class="eco-grid">
+            <a
+              class="eco-card"
+              href="https://github.com/RocketPy-Team/RocketPy"
+            >
+              <div class="eco-head">
+                <span class="eco-icon"><i class="fa-solid fa-rocket"></i></span>
+                <span class="eco-name">RocketPy</span>
+                <span class="eco-badge"
+                  ><i class="fa-solid fa-star"></i>
+                  <span data-stat="stars">1,021</span></span
                 >
-                  documentation
-                </a>
-                .
+              </div>
+              <p class="eco-desc">
+                The core 6-DOF simulation engine.
+                <code>pip install rocketpy</code>
+                and you are flying.
               </p>
-            </div>
-            <div class="media-column reveal-item">
-              <img
-                src="./images/monte-carlo-dispersion.svg"
-                alt="Monte Carlo impact dispersion with a confidence ellipse around the target"
-                class="section-graphic predictions-graphic"
-                loading="lazy"
-                decoding="async"
-                width="400"
-                height="320"
-              />
-            </div>
+              <span class="eco-link">View the core library →</span>
+            </a>
+            <a
+              class="eco-card"
+              href="https://github.com/RocketPy-Team/RocketSerializer"
+            >
+              <div class="eco-head">
+                <span class="eco-icon"
+                  ><i class="fa-solid fa-file-import"></i
+                ></span>
+                <span class="eco-name">RocketSerializer</span>
+                <span class="eco-badge"
+                  ><i class="fa-solid fa-star"></i> 32</span
+                >
+              </div>
+              <p class="eco-desc">
+                Convert your OpenRocket <code>.ork</code> designs into
+                ready-to-run RocketPy simulations.
+              </p>
+              <span class="eco-link">Import from OpenRocket →</span>
+            </a>
+            <a
+              class="eco-card"
+              href="https://github.com/RocketPy-Team/Infinity-API"
+            >
+              <div class="eco-head">
+                <span class="eco-icon"><i class="fa-solid fa-plug"></i></span>
+                <span class="eco-name">Infinity-API</span>
+                <span class="eco-badge"
+                  ><i class="fa-solid fa-star"></i> 9</span
+                >
+              </div>
+              <p class="eco-desc">
+                A RESTful Open API — and an MCP server — to run RocketPy from
+                any app or AI agent.
+              </p>
+              <span class="eco-link">Explore the API →</span>
+            </a>
+            <a class="eco-card" href="https://app.rocketpy.org/">
+              <div class="eco-head">
+                <span class="eco-icon"
+                  ><i class="fa-solid fa-window-maximize"></i
+                ></span>
+                <span class="eco-name">Jarvis</span>
+              </div>
+              <p class="eco-desc">
+                RocketPy's web app — simulate in your browser, no install
+                required. Point, configure, launch.
+              </p>
+              <span class="eco-link">Open Jarvis →</span>
+            </a>
+            <a
+              class="eco-card"
+              href="https://docs.rocketpy.org/en/latest/index.html"
+            >
+              <div class="eco-head">
+                <span class="eco-icon"><i class="fa-solid fa-book"></i></span>
+                <span class="eco-name">Docs</span>
+              </div>
+              <p class="eco-desc">
+                Getting started, user guide, full API reference and a
+                contributor's guide.
+              </p>
+              <span class="eco-link">Read the documentation →</span>
+            </a>
           </div>
         </section>
 
+        <!-- ========================= COMMUNITY ========================= -->
         <section
+          id="community"
           class="content-section panel-bg reveal-section"
           aria-labelledby="community-heading"
         >
-          <h2 id="community-heading" class="section-title reveal-item">
-            From rocketeers to rocketeers
-          </h2>
+          <div class="sec-head reveal-item">
+            <p class="sec-eyebrow">From rocketeers to rocketeers</p>
+            <h2 id="community-heading" class="sec-title">
+              Built by a global community
+            </h2>
+          </div>
           <div class="split-layout">
-            <div class="text-column">
-              <p class="section-text reveal-item">
-                RocketPy is an Open Source software created by rocket
-                enthusiasts. Since it is open source, each and every one of you
-                is more than welcome to be a part of it. Check out our project
-                on
+            <div class="community-lede reveal-item align-left">
+              <p>
+                RocketPy is free and <strong>MIT-licensed</strong>. It was born
+                inside <strong>Projeto Jupiter</strong>, the student rocketry
+                team at the University of São Paulo, Brazil — and grew into the
+                world's leading open-source trajectory simulator, maintained by
+                contributors on six continents.
+              </p>
+              <p>
+                Everyone is welcome. Ask a question, report an idea, or ship a
+                pull request.
+                <a href="./about.html">Meet the people behind RocketPy →</a>
+              </p>
+              <div class="cta-buttons justify-start">
                 <a
                   href="https://github.com/RocketPy-Team/RocketPy"
-                  rel="noopener noreferrer"
-                  >GitHub</a
-                >.
-              </p>
+                  class="cta-btn cta-primary"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  <span>Contribute on GitHub</span>
+                </a>
+                <a
+                  href="https://discord.com/invite/b6xYnNh"
+                  class="cta-btn cta-secondary"
+                >
+                  <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                  <span>Join our Discord</span>
+                </a>
+              </div>
             </div>
             <div class="media-column reveal-item">
               <img
                 src="./images/community-network.svg"
                 alt="A connected network of RocketPy contributors around a central hub"
-                class="section-graphic community-graphic"
+                class="section-graphic"
                 loading="lazy"
                 decoding="async"
                 width="400"
@@ -288,61 +869,236 @@
               />
             </div>
           </div>
+          <div class="channels mt-content">
+            <a
+              class="channel-card reveal-item"
+              href="https://github.com/RocketPy-Team"
+            >
+              <i class="fa-brands fa-github"></i><span>GitHub</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://discord.com/invite/b6xYnNh"
+            >
+              <i class="fa-brands fa-discord"></i><span>Discord</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://www.reddit.com/r/RocketPy/"
+            >
+              <i class="fa-brands fa-reddit"></i><span>Reddit</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://www.linkedin.com/company/rocketpy"
+            >
+              <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://www.instagram.com/rocketpyteam"
+            >
+              <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://www.youtube.com/@rocketpyteam5828"
+            >
+              <i class="fa-brands fa-youtube"></i><span>YouTube</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://github.com/sponsors/RocketPy-Team"
+            >
+              <i class="fa-solid fa-heart"></i><span>Sponsor</span>
+            </a>
+            <a
+              class="channel-card reveal-item"
+              href="https://linktr.ee/rocketpyteam"
+            >
+              <i class="fa-solid fa-link"></i><span>Linktree</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- ========================== HOW TO CITE ====================== -->
+        <section
+          id="cite"
+          class="content-section panel-bg reveal-section"
+          aria-labelledby="cite-heading"
+        >
+          <div class="sec-head reveal-item">
+            <p class="sec-eyebrow">For researchers</p>
+            <h2 id="cite-heading" class="sec-title">Using RocketPy? Cite it</h2>
+            <p class="sec-lede">
+              RocketPy is peer-reviewed. If it supports your research, please
+              cite the papers below.
+            </p>
+          </div>
+          <div class="cite-grid">
+            <div class="cite-item reveal-item">
+              <h3>
+                RocketPy: Six Degree-of-Freedom Rocket Trajectory Simulator
+              </h3>
+              <p class="cite-meta">
+                Ceotto, G. H.; Schmitt, R. N.; Alves, G. F.; Pezente, L. A.;
+                Carmo, B. S. (2021). <em>Journal of Aerospace Engineering</em>,
+                34(6). ASCE.
+                <a
+                  href="https://ascelibrary.org/doi/10.1061/%28ASCE%29AS.1943-5525.0001331"
+                  >doi:10.1061/(ASCE)AS.1943-5525.0001331</a
+                >
+              </p>
+            </div>
+            <div class="cite-item reveal-item">
+              <h3>RocketPy: Combining Open-Source and Scientific Libraries…</h3>
+              <p class="cite-meta">
+                Soares et al. (2022).
+                <em>Proceedings of the Python in Science Conference (SciPy)</em
+                >.
+                <a
+                  href="https://proceedings.scipy.org/articles/majora-212e5952-020"
+                  >doi:10.25080/majora-212e5952-020</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="cite-bibtex reveal-item">
+            <pre
+              class="code-block"
+            ><button class="copy-btn" type="button" aria-label="Copy BibTeX"><i class="fa-solid fa-copy" aria-hidden="true"></i><span class="copy-label">Copy BibTeX</span></button><code>@article{RocketPy2021,
+  author  = {Ceotto, Giovani H. and Schmitt, Rodrigo N. and
+             Alves, Guilherme F. and Pezente, Lucas A. and Carmo, Bruno S.},
+  title   = {{RocketPy}: Six Degree-of-Freedom Rocket Trajectory Simulator},
+  journal = {Journal of Aerospace Engineering},
+  volume  = {34},
+  number  = {6},
+  year    = {2021},
+  doi     = {10.1061/(ASCE)AS.1943-5525.0001331}
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- ========================= FINAL CTA ========================= -->
+        <section
+          class="content-section panel-bg reveal-section final-cta"
+          aria-labelledby="final-heading"
+        >
+          <p class="sec-eyebrow reveal-item">Ready for liftoff?</p>
+          <h2 id="final-heading" class="sec-title reveal-item">
+            Start simulating in minutes
+          </h2>
+          <div class="install-chip reveal-item">
+            <code>pip install rocketpy</code>
+            <button
+              class="copy-btn"
+              type="button"
+              data-copy="pip install rocketpy"
+              aria-label="Copy install command"
+            >
+              <i class="fa-solid fa-copy" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="cta-buttons reveal-item">
+            <a href="https://app.rocketpy.org/" class="cta-btn cta-primary">
+              <span class="simulate-icon"></span>
+              <span>Simulate with RocketPy</span>
+            </a>
+            <a
+              href="https://docs.rocketpy.org/en/latest/index.html"
+              class="cta-btn cta-secondary"
+              >Read the docs</a
+            >
+          </div>
         </section>
       </main>
     </div>
 
-    <footer class="footer-distributed" id="footer">
-      <div class="footer-left">
-        <div class="footer-logo"></div>
-        <p class="footer-company-name">RocketPy Team © 2026</p>
-      </div>
-
-      <div class="footer-center">
-        <div>
-          <i class="fa fa-map-marker icon-max-width"></i>
-          <p>
-            <a href="https://maps.app.goo.gl/qFAGgBq1LqceRkjj6" target="_blank"
-              >São Paulo, Brazil</a
+    <footer class="footer-distributed site-footer" id="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"></div>
+          <p class="footer-tagline">
+            Next-generation open-source 6-DOF rocket trajectory simulation.
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://github.com/RocketPy-Team/RocketPy"
+              aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://discord.com/invite/b6xYnNh" aria-label="Discord"
+              ><i class="fa-brands fa-discord"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/rocketpy"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/rocketpyteam"
+              aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@rocketpyteam5828"
+              aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-links-grid" aria-label="Footer">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="https://app.rocketpy.org/">Jarvis (web app)</a>
+            <a href="#quickstart">Quickstart</a>
+            <a href="#features">Features</a>
+            <a href="#showcase">Showcase</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ecosystem</h4>
+            <a href="https://github.com/RocketPy-Team/RocketPy">Core library</a>
+            <a href="https://github.com/RocketPy-Team/RocketSerializer"
+              >RocketSerializer</a
             >
-          </p>
-        </div>
-        <div>
-          <i class="fa-brands fa-discord icon-max-width"></i>
-          <p>
-            <a href="https://discord.com/invite/b6xYnNh">
-              Join us on discord!
-            </a>
-          </p>
-        </div>
+            <a href="https://github.com/RocketPy-Team/Infinity-API"
+              >Infinity-API</a
+            >
+            <a href="https://pypi.org/project/rocketpy/">PyPI</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/RocketPy-Team">GitHub</a>
+            <a href="https://discord.com/invite/b6xYnNh">Discord</a>
+            <a href="https://www.reddit.com/r/RocketPy/">Reddit</a>
+            <a href="https://linktr.ee/rocketpyteam">Linktree</a>
+            <a href="./about.html">About the team</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="https://docs.rocketpy.org/en/latest/index.html">Docs</a>
+            <a href="https://docs.rocketpy.org/en/latest/examples/index.html"
+              >Examples</a
+            >
+            <a href="#cite">How to cite</a>
+            <a href="https://github.com/sponsors/RocketPy-Team">Sponsor</a>
+          </div>
+        </nav>
       </div>
-
-      <div class="footer-right">
-        <p class="footer-company-about">
-          <span>About us</span>
-          RocketPy Team is responsible for maintaining and developing the
-          RocketPy project, an open-source rocket trajectory simulator.
+      <div class="footer-bottom">
+        <p>
+          RocketPy Team © 2026 · Built in
+          <a href="https://maps.app.goo.gl/qFAGgBq1LqceRkjj6"
+            >São Paulo, Brazil</a
+          >
         </p>
-
-        <div class="footer-icons">
-          <a href="https://www.instagram.com/rocketpyteam"
-            ><i class="fa-brands fa-instagram"></i></a
-          ><a href="https://www.linkedin.com/company/rocketpy"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="https://github.com/RocketPy-Team/RocketPy"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="https://www.youtube.com/@rocketpyteam5828"
-            ><i class="fa-brands fa-youtube"></i>
-          </a>
-        </div>
+        <p>MIT licensed · The sky is not the limit!</p>
       </div>
     </footer>
 
     <script>
+      // Scroll-reveal: reveal sections as they enter the viewport.
       const revealSections = document.querySelectorAll(".reveal-section");
-
       if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -353,14 +1109,122 @@
               }
             });
           },
-          { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+          { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
         );
-
         revealSections.forEach((section) => observer.observe(section));
       } else {
         revealSections.forEach((section) =>
           section.classList.add("is-visible"),
         );
+      }
+
+      // Mobile nav toggle.
+      const header = document.querySelector(".site-header");
+      const navToggle = document.querySelector(".nav-toggle");
+      if (header && navToggle) {
+        navToggle.addEventListener("click", () => {
+          const open = header.classList.toggle("nav-open");
+          navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        header.querySelectorAll(".nav-link").forEach((link) =>
+          link.addEventListener("click", () => {
+            header.classList.remove("nav-open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }),
+        );
+      }
+
+      // Copy-to-clipboard for install chips, code snippet and BibTeX.
+      document.querySelectorAll(".copy-btn").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const text =
+            btn.dataset.copy ??
+            btn.closest(".code-block")?.querySelector("code")?.textContent;
+          if (!text) return;
+          try {
+            await navigator.clipboard.writeText(text.trim());
+            btn.classList.add("is-copied");
+            const label = btn.querySelector(".copy-label");
+            const previous = label ? label.textContent : null;
+            if (label) label.textContent = "Copied!";
+            setTimeout(() => {
+              btn.classList.remove("is-copied");
+              if (label) label.textContent = previous;
+            }, 2000);
+          } catch (err) {
+            /* clipboard unavailable — no-op */
+          }
+        });
+      });
+
+      // Auto-scrolling feature carousel. Clones the cards once for a seamless
+      // loop, advances scrollLeft frame-by-frame, and pauses on hover, focus
+      // or manual interaction. Skipped entirely under prefers-reduced-motion
+      // (CSS then lays the cards out as a static wrapping grid).
+      const marquee = document.querySelector("[data-marquee]");
+      const marqueeTrack = marquee && marquee.querySelector(".marquee-track");
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      if (marqueeTrack && !prefersReduced.matches) {
+        Array.from(marqueeTrack.children).forEach((card) => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          marqueeTrack.appendChild(clone);
+        });
+        marquee.classList.add("is-animating");
+
+        let halfWidth = marqueeTrack.scrollWidth / 2;
+        window.addEventListener("resize", () => {
+          halfWidth = marqueeTrack.scrollWidth / 2;
+        });
+
+        let hovering = false;
+        let focused = false;
+        let interacting = false;
+        let interactTimer;
+        const holdInteraction = () => {
+          interacting = true;
+          clearTimeout(interactTimer);
+          interactTimer = setTimeout(() => {
+            interacting = false;
+          }, 1400);
+        };
+        marquee.addEventListener("mouseenter", () => {
+          hovering = true;
+        });
+        marquee.addEventListener("mouseleave", () => {
+          hovering = false;
+        });
+        marquee.addEventListener("focusin", () => {
+          focused = true;
+        });
+        marquee.addEventListener("focusout", () => {
+          focused = false;
+        });
+        marquee.addEventListener("wheel", holdInteraction, { passive: true });
+        marquee.addEventListener("touchstart", holdInteraction, {
+          passive: true,
+        });
+        marquee.addEventListener("touchmove", holdInteraction, {
+          passive: true,
+        });
+
+        const SPEED = 55; // px per second
+        let last = null;
+        const tick = (now) => {
+          if (last === null) last = now;
+          const dt = (now - last) / 1000;
+          last = now;
+          if (!hovering && !focused && !interacting && halfWidth > 0) {
+            marquee.scrollLeft += SPEED * dt;
+            if (marquee.scrollLeft >= halfWidth) {
+              marquee.scrollLeft -= halfWidth;
+            }
+          }
+          requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
       }
     </script>
   </body>
