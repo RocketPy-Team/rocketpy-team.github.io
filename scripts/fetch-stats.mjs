@@ -3,10 +3,11 @@
  * Build-time stats injector.
  *
  * Fetches live project metrics (GitHub stars/forks/contributors, recent PyPI
- * downloads) and rewrites the matching `data-stat="..."` anchors inside the
- * ALREADY-BUILT `dist/index.html`. It never touches the source `index.html`,
- * and it is best-effort: any network/parse failure falls back to the committed
- * defaults so a deploy can never be broken by a flaky API.
+ * downloads) plus a build date, and rewrites the matching `data-stat="..."`
+ * anchors inside the ALREADY-BUILT pages (`dist/index.html`, `dist/about.html`).
+ * It never touches the source HTML, and it is best-effort: any network/parse
+ * failure falls back to the committed defaults so a deploy can never be broken
+ * by a flaky API.
  *
  * Runs after `npm run build`, on the CI runner (see .github/workflows/static.yml),
  * authenticated with GITHUB_TOKEN to avoid the 60 req/hr unauthenticated limit.
@@ -15,7 +16,9 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const REPO = "RocketPy-Team/RocketPy";
-const HTML = "dist/index.html";
+// Both built pages carry data-stat anchors (the landing's stats band + the
+// star badge shared by the header on both pages), so inject into each.
+const HTML_FILES = ["dist/index.html", "dist/about.html"];
 
 /* Hard cap per request. `continue-on-error` in CI handles a *failed* fetch, but
    not a *hung* one — without this a slow/stalled API would keep the deploy step
@@ -100,37 +103,48 @@ try {
   console.warn("stats: pypi downloads ->", e.message);
 }
 
-/* --- inject into dist/index.html on the stable data-stat anchors --- */
+/* --- compute display values, then inject into the built pages --- */
+// Build date shown as the stats "last updated" label, e.g. "July 2026". The
+// site redeploys monthly (see static.yml) so this stays current.
+const updated = new Date().toLocaleString("en-US", {
+  month: "long",
+  year: "numeric",
+});
 const values = {
   stars: comma(stats.stars),
   forks: comma(stats.forks),
   contributors: stats.contributors + "+", // shown as a raw "N+", e.g. "75+"
   downloads: kplus(stats.downloads),
+  updated,
 };
 
-let html;
-try {
-  html = await readFile(HTML, "utf8");
-} catch (e) {
-  console.warn(`stats: cannot read ${HTML} (${e.message}); skipping injection`);
-  process.exit(0);
+for (const file of HTML_FILES) {
+  let html;
+  try {
+    html = await readFile(file, "utf8");
+  } catch (e) {
+    console.warn(`stats: cannot read ${file} (${e.message}); skipping`);
+    continue;
+  }
+
+  let hits = 0;
+  for (const [key, value] of Object.entries(values)) {
+    const re = new RegExp(
+      `(<[^>]*\\bdata-stat="${key}"[^>]*>)([^<]*)(</)`,
+      "g",
+    );
+    html = html.replace(re, (_, open, __, close) => {
+      hits += 1;
+      return open + value + close;
+    });
+  }
+
+  if (hits === 0) {
+    console.warn(`stats: WARNING — no data-stat anchors matched in ${file}`);
+  } else {
+    await writeFile(file, html);
+  }
+  console.log(`stats: injected ${hits} value(s) into ${file}`);
 }
 
-let hits = 0;
-for (const [key, value] of Object.entries(values)) {
-  const re = new RegExp(`(<[^>]*\\bdata-stat="${key}"[^>]*>)([^<]*)(</)`, "g");
-  html = html.replace(re, (_, open, __, close) => {
-    hits += 1;
-    return open + value + close;
-  });
-}
-
-if (hits === 0) {
-  console.warn(
-    "stats: WARNING — no data-stat anchors matched; leaving committed defaults",
-  );
-} else {
-  await writeFile(HTML, html);
-}
-
-console.log(`stats: injected ${hits} value(s)`, values);
+console.log("stats: values", values);

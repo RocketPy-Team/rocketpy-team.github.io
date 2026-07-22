@@ -240,6 +240,9 @@ body::before {
 .hero-tagline {
   font-size: clamp(1.95rem, 4.8vw, 3rem);
   margin-bottom: 10px;
+  /* Balance the lines so short words (e.g. "limit!") don't wrap alone.
+     Ignored gracefully by browsers without text-wrap support. */
+  text-wrap: balance;
 }
 
 .section-title {

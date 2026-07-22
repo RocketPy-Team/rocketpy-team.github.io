@@ -52,6 +52,7 @@
     />
 
     <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/nav.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
     <link href="./css/home.css" rel="stylesheet" />
     <link href="./css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
@@ -257,12 +258,12 @@
             </div>
           </div>
           <p class="stats-note reveal-item">
-            Live from GitHub &amp; PyPI, refreshed on every deploy —
+            Updated <span data-stat="updated">July 2026</span> ·
             <a
               class="text-link"
               href="https://github.com/RocketPy-Team/RocketPy"
               >star us on GitHub</a
-            >.
+            >
           </p>
         </section>
 
@@ -299,10 +300,12 @@
               <li class="qs-step">
                 <span class="qs-num">2</span>
                 <div>
-                  <h3><code>SolidMotor</code></h3>
+                  <h3><code>Motor</code></h3>
                   <p>
-                    Model solid, hybrid or liquid propulsion from a thrust
-                    curve.
+                    Pick a variant —
+                    <code>SolidMotor</code>, <code>HybridMotor</code>,
+                    <code>LiquidMotor</code> or <code>GenericMotor</code> — each
+                    built from its thrust curve and geometry.
                   </p>
                 </div>
               </li>
@@ -333,7 +336,7 @@
 env = <span class="tok-cls">Environment</span>(latitude=<span class="tok-num">32.99</span>, longitude=-<span class="tok-num">106.97</span>, elevation=<span class="tok-num">1400</span>)
 env.<span class="tok-fn">set_atmospheric_model</span>(type=<span class="tok-str">"Forecast"</span>, file=<span class="tok-str">"GFS"</span>)
 
-<span class="tok-com"># 2 · Build the motor</span>
+<span class="tok-com"># 2 · Build the motor (SolidMotor here — also Hybrid/Liquid/Generic)</span>
 motor = <span class="tok-cls">SolidMotor</span>(
     thrust_source=<span class="tok-str">"Cesaroni_M1670.eng"</span>,
     dry_mass=<span class="tok-num">1.815</span>, grain_number=<span class="tok-num">5</span>, nozzle_radius=<span class="tok-num">0.033</span>,
@@ -692,10 +695,16 @@ flight.<span class="tok-fn">all_info</span>()</code></pre>
             </li>
           </ul>
           <p class="contrib-note">
-            Trusted by 100+ university teams at the
-            <strong>Spaceport America Cup</strong>, the
-            <strong>European Rocketry Challenge (EuRoC)</strong> and the
-            <strong>Latin American Space Challenge</strong>.
+            RocketPy is the
+            <strong
+              >official flight simulator of the European Rocketry Challenge
+              (EuRoC)</strong
+            >
+            since 2022 and of the
+            <strong>Latin American Space Challenge (LASC)</strong> since 2025 —
+            and the RocketPy team actively supports and partners with both. It
+            is trusted by 100+ university teams worldwide, including at the
+            Spaceport America Cup.
             <a href="https://docs.rocketpy.org/en/latest/examples/index.html"
               >See all validation examples →</a
             >
@@ -780,13 +789,13 @@ flight.<span class="tok-fn">all_info</span>()</code></pre>
                 <span class="eco-icon"
                   ><i class="fa-solid fa-window-maximize"></i
                 ></span>
-                <span class="eco-name">The App</span>
+                <span class="eco-name">Jarvis</span>
               </div>
               <p class="eco-desc">
-                Simulate in your browser — no install required. Point,
-                configure, launch.
+                RocketPy's web app — simulate in your browser, no install
+                required. Point, configure, launch.
               </p>
-              <span class="eco-link">Open the web app →</span>
+              <span class="eco-link">Open Jarvis →</span>
             </a>
             <a
               class="eco-card"
@@ -802,64 +811,6 @@ flight.<span class="tok-fn">all_info</span>()</code></pre>
               </p>
               <span class="eco-link">Read the documentation →</span>
             </a>
-          </div>
-        </section>
-
-        <!-- ============================ R&D ============================ -->
-        <section
-          id="research"
-          class="content-section panel-bg reveal-section"
-          aria-labelledby="research-heading"
-        >
-          <div class="sec-head reveal-item">
-            <p class="sec-eyebrow is-teal">On the horizon</p>
-            <h2 id="research-heading" class="sec-title">
-              The frontier of flight simulation
-            </h2>
-            <p class="sec-lede">
-              What the team is building next — pushing accuracy, speed and
-              accessibility further.
-            </p>
-          </div>
-          <div class="rnd-grid">
-            <article class="rnd-card reveal-item">
-              <span class="rnd-icon"><i class="fa-solid fa-brain"></i></span>
-              <span class="rnd-tag">Research</span>
-              <h3>AI surrogate models</h3>
-              <p>
-                Neural-network surrogates to accelerate Monte Carlo campaigns by
-                orders of magnitude.
-              </p>
-            </article>
-            <article class="rnd-card reveal-item">
-              <span class="rnd-icon"><i class="fa-solid fa-comments"></i></span>
-              <span class="rnd-tag">Research</span>
-              <h3>Natural-language queries</h3>
-              <p>
-                RAG systems that let you ask aerospace questions and get answers
-                grounded in your data.
-              </p>
-            </article>
-            <article class="rnd-card reveal-item">
-              <span class="rnd-icon"
-                ><i class="fa-solid fa-microchip"></i
-              ></span>
-              <span class="rnd-tag">Roadmap</span>
-              <h3>Hardware-in-the-loop</h3>
-              <p>
-                A HIL validation framework to test avionics against a live
-                simulated flight.
-              </p>
-            </article>
-            <article class="rnd-card reveal-item">
-              <span class="rnd-icon"><i class="fa-solid fa-robot"></i></span>
-              <span class="rnd-tag">Roadmap</span>
-              <h3>Built for AI agents</h3>
-              <p>
-                An MCP server so LLMs and autonomous agents can design and fly
-                rockets directly.
-              </p>
-            </article>
           </div>
         </section>
 
@@ -1099,7 +1050,7 @@ flight.<span class="tok-fn">all_info</span>()</code></pre>
         <nav class="footer-links-grid" aria-label="Footer">
           <div class="footer-col">
             <h4>Product</h4>
-            <a href="https://app.rocketpy.org/">Web app</a>
+            <a href="https://app.rocketpy.org/">Jarvis (web app)</a>
             <a href="#quickstart">Quickstart</a>
             <a href="#features">Features</a>
             <a href="#showcase">Showcase</a>

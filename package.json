@@ -5,10 +5,11 @@
   "scripts": {
     "format": "prettier --write '**/*.{html,css,js,mjs}'",
     "build": "npm run build:css && npm run build:html",
-    "build:css": "npm run minify:css:main && npm run minify:css:footer && npm run minify:css:about && npm run minify:css:home",
+    "build:css": "npm run minify:css:main && npm run minify:css:nav && npm run minify:css:footer && npm run minify:css:about && npm run minify:css:home",
     "build:html": "npm run minify:html:index && npm run minify:html:about",
     "stats": "node scripts/fetch-stats.mjs",
     "minify:css:main": "lightningcss --minify --bundle css/main.css -o dist/css/main.css",
+    "minify:css:nav": "lightningcss --minify --bundle css/nav.css -o dist/css/nav.css",
     "minify:css:footer": "lightningcss --minify --bundle css/footer.css -o dist/css/footer.css",
     "minify:css:about": "lightningcss --minify --bundle css/about.css -o dist/css/about.css",
     "minify:css:home": "lightningcss --minify --bundle css/home.css -o dist/css/home.css",
